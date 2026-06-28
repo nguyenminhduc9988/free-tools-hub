@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Regex Tester — Free Online Tool | ToolNest | ToolNest</title>
+<meta name="description" content="Test regular expressions in real-time with live highlighting, match extraction, and group capture.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/regex-tester">
+<meta name="keywords" content="regex tester, regular expression tester, regex online, regex tester javascript, regex pattern test">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Regex Tester — Free Online Tool | ToolNest | ToolNest">
+<meta property="og:description" content="Test regular expressions in real-time with live highlighting, match extraction, and group capture.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/regex-tester">
+<meta name="theme-color" content="#0f1115">
+<script type="application/ld+json">{&quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;WebApplication&quot;, &quot;name&quot;: &quot;Regex Tester \u2014 Free Online Tool | ToolNest&quot;, &quot;description&quot;: &quot;Test regular expressions in real-time with live highlighting, match extraction, and group capture.&quot;, &quot;url&quot;: &quot;https://nguyenminhduc9988.github.io/free-tools-hub/tools/regex-tester&quot;, &quot;applicationCategory&quot;: &quot;UtilitiesApplication&quot;, &quot;operatingSystem&quot;: &quot;Any&quot;, &quot;offers&quot;: {&quot;@type&quot;: &quot;Offer&quot;, &quot;price&quot;: &quot;0&quot;, &quot;priceCurrency&quot;: &quot;USD&quot;}}</script>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}.logo span{color:var(--acc2)}
+.nav a.lnk{color:var(--muted);font-size:.92rem}.nav a.lnk:hover{color:var(--ink);text-decoration:none}
+.hero{padding:46px 0 22px;text-align:center}.hero h1{font-size:2.4rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}.hero p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:6px auto 0}
+section.body{padding:14px 0 50px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+textarea,input[type=text],input[type=number],input[type=date],select{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.9rem}
+textarea{min-height:150px;resize:vertical}textarea:focus,input:focus,select:focus{outline:none;border-color:var(--acc)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+button{cursor:pointer;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}button:hover{filter:brightness(1.08)}
+button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.out{margin-top:14px;padding:14px;background:#0b0d12;border:1px solid var(--line);border-radius:10px;font-size:.95rem}
+.msg{margin-top:10px;padding:10px 13px;border-radius:10px;font-size:.9rem}
+.msg.ok{background:rgba(34,211,166,.12);color:var(--ok);border:1px solid rgba(34,211,166,.3)}
+.msg.err{background:rgba(255,107,107,.12);color:var(--err);border:1px solid rgba(255,107,107,.3)}
+.label{display:block;font-size:.8rem;color:var(--muted);margin:10px 0 5px;text-transform:uppercase;letter-spacing:.5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:640px){.row2,.row3{grid-template-columns:1fr}.hero h1{font-size:1.9rem}}
+.seo{color:var(--muted);font-size:.95rem;margin-top:30px}.seo h2{color:var(--ink);font-size:1.2rem;margin:1.2em 0 .3em}.seo p{margin:.5em 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.ad-slot{display:flex;align-items:center;justify-content:center;margin:18px 0;min-height:90px;background:var(--card);border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.8rem}
+.crumbs{font-size:.82rem;color:var(--muted);margin:8px 0}.crumbs a{color:var(--muted)}
+.result-box{background:rgba(79,140,255,.1);border:1px solid var(--acc);border-radius:10px;padding:16px;font-size:1.1rem;font-weight:600;color:var(--acc)}
+
+input[type=range]{width:100%;accent-color:var(--acc)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="/free-tools-hub/">ToolNest<span>.</span></a>
+<a class="lnk" href="/free-tools-hub/">All Tools</a>
+<a class="lnk" href="/free-tools-hub/about">About</a>
+</div></header>
+<div class="wrap">
+<div class="hero"><h1>Regex Tester</h1><p>Test regular expressions in real-time with live highlighting, match extraction, and group capture.</p></div>
+<div class="ad-slot" data-ad="banner">
+  <script type="text/javascript">
+    atOptions = {'key' : '5392577','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+  </script>
+</div>
+<section class="body">
+
+<div class="tool">
+<h2>Test Your Regular Expression</h2>
+<label class="label">Regular Expression</label>
+<div style="display:flex;gap:8px"><span style="padding:12px;color:var(--acc);font-weight:bold">/</span><input type="text" id="regexPat" placeholder="\b\d+\.\d+\b" oninput="testRegex()"><span style="padding:12px;color:var(--acc);font-weight:bold">/</span><input type="text" id="regexFlags" placeholder="gi" style="width:60px" oninput="testRegex()"></div>
+<label class="label">Test String</label>
+<textarea id="regexInput" rows="6" oninput="testRegex()" placeholder="Enter text to test against...">The price is 19.99 and the discount is 5.50. No match here: hello world. Another number: 42.0</textarea>
+<div id="regexResult" style="margin-top:14px"></div>
+</div>
+<script>
+function escH(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function testRegex(){
+var pat=document.getElementById('regexPat').value,flags=document.getElementById('regexFlags').value,input=document.getElementById('regexInput').value,out=document.getElementById('regexResult');
+if(!pat){out.innerHTML='';return}
+try{
+var re=new RegExp(pat,flags);var matches=input.match(re);
+var highlighted=escH(input).replace(re,function(m){return '<mark style="background:rgba(79,140,255,.3);color:var(--acc);padding:1px 3px;border-radius:3px">'+escH(m)+'</mark>'});
+var html='<div class="out"><strong>Matches ('+(matches?matches.length:0)+'):</strong><div style="margin-top:8px;line-height:1.8">'+(highlighted||escH(input))+'</div></div>';
+if(matches&&matches.length>0&&matches.length<50){
+html+='<div class="out" style="margin-top:8px"><strong>Match Groups:</strong><ol style="margin:6px 0 0 20px">';
+matches.forEach(function(m){html+='<li style="color:var(--ok)"><code>'+escH(m)+'</code></li>'});
+html+='</ol></div>'}
+out.innerHTML=html;
+}catch(e){out.innerHTML='<div class="msg err">Invalid regex: '+escH(e.message)+'</div>'}
+}
+testRegex();
+</script>
+<div class="ad-slot" data-ad="banner">
+  <script type="text/javascript">
+    atOptions = {'key' : '5392577','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+  </script>
+</div>
+</section>
+<div class="seo">
+<h2>Free Regex Tester Online</h2><p>Test and debug regular expressions with real-time highlighting. See all matches highlighted in your test string, with match groups extracted. Supports all JavaScript regex flags (g, i, m, s, u).</p>
+</div>
+</div>
+<footer><div class="wrap"><p>&copy; 2026 ToolNest. Free online tools — fast, private, no signup.</p></div></footer>
+</body></html>

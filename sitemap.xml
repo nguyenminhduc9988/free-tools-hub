@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/json-formatter.html</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/base64.html</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/url-encoder.html</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -13,5 +13,15 @@
   <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/text-diff.html</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/qr-generator.html</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/unit-converter.html</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/about/</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/percentage-calculator.html</loc><lastmod>2026-06-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/age-calculator.html</loc><lastmod>2026-06-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/bmi-calculator.html</loc><lastmod>2026-06-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/loan-calculator.html</loc><lastmod>2026-06-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/regex-tester.html</loc><lastmod>2026-06-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/timestamp-converter.html</loc><lastmod>2026-06-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/markdown-to-html.html</loc><lastmod>2026-06-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/email-extractor.html</loc><lastmod>2026-06-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/image-resizer.html</loc><lastmod>2026-06-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/tools/css-minifier.html</loc><lastmod>2026-06-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nguyenminhduc9988.github.io/free-tools-hub/about/</loc><lastmod>2026-06-28</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
 </urlset>

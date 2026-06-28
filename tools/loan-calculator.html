@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loan Calculator — Free Online Tool | ToolNest | ToolNest</title>
+<meta name="description" content="Calculate monthly loan payments, total interest and amortization schedule for any loan amount, rate and term.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/loan-calculator">
+<meta name="keywords" content="loan calculator, mortgage calculator, car loan calculator, monthly payment calculator, interest calculator">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Loan Calculator — Free Online Tool | ToolNest | ToolNest">
+<meta property="og:description" content="Calculate monthly loan payments, total interest and amortization schedule for any loan amount, rate and term.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/loan-calculator">
+<meta name="theme-color" content="#0f1115">
+<script type="application/ld+json">{&quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;WebApplication&quot;, &quot;name&quot;: &quot;Loan Calculator \u2014 Free Online Tool | ToolNest&quot;, &quot;description&quot;: &quot;Calculate monthly loan payments, total interest and amortization schedule for any loan amount, rate and term.&quot;, &quot;url&quot;: &quot;https://nguyenminhduc9988.github.io/free-tools-hub/tools/loan-calculator&quot;, &quot;applicationCategory&quot;: &quot;UtilitiesApplication&quot;, &quot;operatingSystem&quot;: &quot;Any&quot;, &quot;offers&quot;: {&quot;@type&quot;: &quot;Offer&quot;, &quot;price&quot;: &quot;0&quot;, &quot;priceCurrency&quot;: &quot;USD&quot;}}</script>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}.logo span{color:var(--acc2)}
+.nav a.lnk{color:var(--muted);font-size:.92rem}.nav a.lnk:hover{color:var(--ink);text-decoration:none}
+.hero{padding:46px 0 22px;text-align:center}.hero h1{font-size:2.4rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}.hero p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:6px auto 0}
+section.body{padding:14px 0 50px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+textarea,input[type=text],input[type=number],input[type=date],select{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.9rem}
+textarea{min-height:150px;resize:vertical}textarea:focus,input:focus,select:focus{outline:none;border-color:var(--acc)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+button{cursor:pointer;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}button:hover{filter:brightness(1.08)}
+button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.out{margin-top:14px;padding:14px;background:#0b0d12;border:1px solid var(--line);border-radius:10px;font-size:.95rem}
+.msg{margin-top:10px;padding:10px 13px;border-radius:10px;font-size:.9rem}
+.msg.ok{background:rgba(34,211,166,.12);color:var(--ok);border:1px solid rgba(34,211,166,.3)}
+.msg.err{background:rgba(255,107,107,.12);color:var(--err);border:1px solid rgba(255,107,107,.3)}
+.label{display:block;font-size:.8rem;color:var(--muted);margin:10px 0 5px;text-transform:uppercase;letter-spacing:.5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:640px){.row2,.row3{grid-template-columns:1fr}.hero h1{font-size:1.9rem}}
+.seo{color:var(--muted);font-size:.95rem;margin-top:30px}.seo h2{color:var(--ink);font-size:1.2rem;margin:1.2em 0 .3em}.seo p{margin:.5em 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.ad-slot{display:flex;align-items:center;justify-content:center;margin:18px 0;min-height:90px;background:var(--card);border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.8rem}
+.crumbs{font-size:.82rem;color:var(--muted);margin:8px 0}.crumbs a{color:var(--muted)}
+.result-box{background:rgba(79,140,255,.1);border:1px solid var(--acc);border-radius:10px;padding:16px;font-size:1.1rem;font-weight:600;color:var(--acc)}
+
+input[type=range]{width:100%;accent-color:var(--acc)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="/free-tools-hub/">ToolNest<span>.</span></a>
+<a class="lnk" href="/free-tools-hub/">All Tools</a>
+<a class="lnk" href="/free-tools-hub/about">About</a>
+</div></header>
+<div class="wrap">
+<div class="hero"><h1>Loan Calculator</h1><p>Calculate monthly loan payments, total interest and amortization schedule for any loan amount, rate and term.</p></div>
+<div class="ad-slot" data-ad="banner">
+  <script type="text/javascript">
+    atOptions = {'key' : '5392577','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+  </script>
+</div>
+<section class="body">
+
+<div class="tool">
+<h2>Loan Payment Calculator</h2>
+<div class="row3">
+<div><label class="label">Loan Amount ($)</label><input type="number" id="loanAmt" placeholder="250000" oninput="calcLoan()"></div>
+<div><label class="label">Interest Rate (%/yr)</label><input type="number" id="loanRate" placeholder="6.5" step="0.1" oninput="calcLoan()"></div>
+<div><label class="label">Term (years)</label><input type="number" id="loanTerm" placeholder="30" oninput="calcLoan()"></div>
+</div>
+<div id="loanResult" style="margin-top:16px"></div>
+</div>
+<div class="tool">
+<h2>Amortization Schedule (First 12 months)</h2>
+<div id="amortTable" style="overflow-x:auto"></div>
+</div>
+<script>
+function calcLoan(){
+var P=parseFloat(document.getElementById('loanAmt').value),r=parseFloat(document.getElementById('loanRate').value)/100/12,n=parseFloat(document.getElementById('loanTerm').value)*12;
+if(!P||!r||!n){document.getElementById('loanResult').innerHTML='';return}
+var M=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1),total=M*n,interest=total-P;
+document.getElementById('loanResult').innerHTML=
+'<div class="row3"><div class="result-box" style="text-align:center"><div style="font-size:.8rem;color:var(--muted)">Monthly Payment</div>$'+M.toFixed(2)+'</div><div class="result-box" style="text-align:center"><div style="font-size:.8rem;color:var(--muted)">Total Interest</div>$'+interest.toFixed(2)+'</div><div class="result-box" style="text-align:center"><div style="font-size:.8rem;color:var(--muted)">Total Cost</div>$'+total.toFixed(2)+'</div></div>';
+var html='<table style="width:100%;font-size:.85rem;border-collapse:collapse"><tr style="color:var(--muted)"><th style="padding:6px;text-align:left">Month</th><th style="padding:6px;text-align:right">Payment</th><th style="padding:6px;text-align:right">Principal</th><th style="padding:6px;text-align:right">Interest</th><th style="padding:6px;text-align:right">Balance</th></tr>';
+var bal=P;for(var i=1;i<=Math.min(12,n);i++){var ip=bal*r,pp=M-ip;bal-=pp;
+html+='<tr><td style="padding:4px 6px">'+i+'</td><td style="padding:4px 6px;text-align:right">$'+M.toFixed(2)+'</td><td style="padding:4px 6px;text-align:right;color:var(--ok)">$'+pp.toFixed(2)+'</td><td style="padding:4px 6px;text-align:right;color:var(--err)">$'+ip.toFixed(2)+'</td><td style="padding:4px 6px;text-align:right">$'+Math.max(0,bal).toFixed(2)+'</td></tr>'}
+html+='</table>';document.getElementById('amortTable').innerHTML=html;
+}
+</script>
+<div class="ad-slot" data-ad="banner">
+  <script type="text/javascript">
+    atOptions = {'key' : '5392577','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+  </script>
+</div>
+</section>
+<div class="seo">
+<h2>Free Loan Calculator</h2><p>Calculate your monthly payment, total interest, and view a full amortization schedule. Works for mortgages, car loans, student loans, and personal loans. Enter your loan amount, interest rate, and term to see results instantly.</p>
+</div>
+</div>
+<footer><div class="wrap"><p>&copy; 2026 ToolNest. Free online tools — fast, private, no signup.</p></div></footer>
+</body></html>
