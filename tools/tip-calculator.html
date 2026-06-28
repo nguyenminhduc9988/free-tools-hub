@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tip Calculator — Split Bill &amp; Calculate Gratuity — Free Online Tool | ToolNest</title>
+<meta name="description" content="Calculate tips, split bills between friends, and see total per person instantly.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/tip-calculator">
+<meta name="keywords" content="tip calculator, split bill, gratuity calculator, restaurant bill splitter, how much to tip">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tip Calculator — Split Bill &amp; Calculate Gratuity — Free Online Tool | ToolNest">
+<meta property="og:description" content="Calculate tips, split bills between friends, and see total per person instantly.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/tip-calculator">
+<meta name="theme-color" content="#0f1115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Tip Calculator \u2014 Split Bill & Calculate Gratuity", "description": "Calculate tips, split bills between friends, and see total per person instantly.", "url": "https://nguyenminhduc9988.github.io/free-tools-hub/tools/tip-calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<style>:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}.logo span{color:var(--acc2)}
+.hero{padding:24px 0 8px;text-align:left}.hero h1{font-size:1.9rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}.hero p{color:var(--muted);font-size:1.05rem;max-width:620px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+textarea,input[type=text],input[type=number],input[type=date],select{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.9rem}
+textarea{min-height:150px;resize:vertical}textarea:focus,input:focus,select:focus{outline:none;border-color:var(--acc)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+button{cursor:pointer;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}button:hover{filter:brightness(1.08)}
+button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.out{margin-top:14px;padding:14px;background:#0b0d12;border:1px solid var(--line);border-radius:10px;font-size:.95rem}
+.msg{margin-top:10px;padding:10px 13px;border-radius:10px;font-size:.9rem}
+.msg.ok{background:rgba(34,211,166,.12);color:var(--ok);border:1px solid rgba(34,211,166,.3)}
+.label{display:block;font-size:.8rem;color:var(--muted);margin:10px 0 5px;text-transform:uppercase;letter-spacing:.5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:640px){.row2,.row3{grid-template-columns:1fr}.hero h1{font-size:1.5rem}}
+.seo{color:var(--muted);font-size:.95rem;margin-top:30px}.seo h2{color:var(--ink);font-size:1.2rem;margin:1.2em 0 .3em}.seo p{margin:.5em 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.ad-slot{display:flex;align-items:center;justify-content:center;margin:18px 0;min-height:90px;background:var(--card);border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.8rem}
+.crumbs{font-size:.82rem;color:var(--muted);margin:8px 0}.crumbs a{color:var(--muted)}
+.result-box{background:rgba(79,140,255,.1);border:1px solid var(--acc);border-radius:10px;padding:16px;font-size:1.1rem;font-weight:600;color:var(--acc)}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.dice-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.dice{width:60px;height:60px;background:var(--card);border:2px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700}
+.dice.active{border-color:var(--acc);color:var(--acc);background:rgba(79,140,255,.1)}
+.timer-display{font-size:3rem;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:2px;margin:20px 0;padding:20px;background:#0b0d12;border-radius:16px;border:1px solid var(--line)}
+.timer-btn{font-size:1.2rem;padding:14px 28px}
+.retro-words{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.retro-words span{background:#0b0d12;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:.9rem}
+.retro-words span.found{border-color:var(--acc);color:var(--acc);background:rgba(79,140,255,.1)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="/free-tools-hub/">ToolNest<span>.</span></a>
+<a href="/free-tools-hub/about" style="color:var(--muted);font-size:.92rem">About</a>
+</div></header>
+<div class="wrap">
+<div class="crumbs"><a href="/free-tools-hub/">Home</a> › Tip Calculator — Split Bill &amp; Calculate Gratuity</div>
+<div class="hero">
+<h1>Tip Calculator — Split Bill &amp; Calculate Gratuity</h1>
+<p>Calculate tips, split bills between friends, and see total per person instantly.</p>
+</div>
+<div class="ad-slot"><!-- Adsterra banner --></div>
+<div class="tool">
+<label class="label">Bill amount ($)</label>
+<input id="bill" type="text" placeholder="0.00" oninput="calc()">
+<label class="label">Tip percentage</label>
+<div class="btns" style="margin-top:6px;margin-bottom:6px">
+<button onclick="setTip(15)">15%</button>
+<button onclick="setTip(18)">18%</button>
+<button onclick="setTip(20)">20%</button>
+<button onclick="setTip(25)">25%</button>
+<button class="sec" onclick="setTip(0)">Custom</button>
+</div>
+<div class="row2">
+<div><label class="label">Custom tip %</label><input id="tipPct" type="number" value="18" min="0" oninput="calc()"></div>
+<div><label class="label">Split between</label><input id="split" type="number" value="1" min="1" oninput="calc()"></div>
+</div>
+<div id="out" class="result-box" style="margin-top:16px">Enter a bill amount to calculate</div>
+</div>
+<div class="ad-slot"><!-- Adsterra banner --></div>
+<div class="seo">
+<h2>About Tip Calculator — Split Bill &amp; Calculate Gratuity</h2>
+<p>Quickly calculate how much to tip at a restaurant, bar, or café. Enter your bill, choose a tip percentage (15%, 18%, 20%, or custom), and split the total among friends. This tip calculator shows the tip amount, total bill, and how much each person owes. Works for any currency and any group size.</p>
+</div>
+</div>
+<footer><div class="wrap">
+<p>© 2026 ToolNest. Free online tools — fast, private, no signup.</p>
+</div></footer>
+<script>function $(id){return document.getElementById(id)}
+function setTip(v){$('tipPct').value=v;calc();}
+function calc(){
+  var b=parseFloat($('bill').value)||0;var t=parseFloat($('tipPct').value)||0;var s=Math.max(1,parseInt($('split').value)||1);
+  var tip=b*t/100;var total=b+tip;var per=total/s;var tipPer=tip/s;
+  if(!b){$('out').textContent='Enter a bill amount to calculate';return;}
+  $('out').innerHTML=
+    '<div class="row2"><div>Tip: <b>$'+tip.toFixed(2)+'</b></div><div>Total: <b>$'+total.toFixed(2)+'</b></div></div>'+
+    '<div style="margin-top:12px;font-size:1.3rem;color:var(--acc2)">$'+per.toFixed(2)+' <span style="font-size:.85rem;color:var(--muted)">per person</span></div>'+
+    (s>1?'<div style="margin-top:6px;color:var(--muted);font-size:.85rem">Tip per person: $'+tipPer.toFixed(2)+'</div>':'');
+}</script>
+</body></html>

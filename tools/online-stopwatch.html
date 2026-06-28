@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Online Stopwatch &amp; Timer — Free Online Tool | ToolNest</title>
+<meta name="description" content="Free online stopwatch with lap times. Start, stop, reset and record lap splits.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/online-stopwatch">
+<meta name="keywords" content="online stopwatch, stopwatch timer, lap timer, free stopwatch, count up timer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Online Stopwatch &amp; Timer — Free Online Tool | ToolNest">
+<meta property="og:description" content="Free online stopwatch with lap times. Start, stop, reset and record lap splits.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/online-stopwatch">
+<meta name="theme-color" content="#0f1115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Online Stopwatch & Timer", "description": "Free online stopwatch with lap times. Start, stop, reset and record lap splits.", "url": "https://nguyenminhduc9988.github.io/free-tools-hub/tools/online-stopwatch", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<style>:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}.logo span{color:var(--acc2)}
+.hero{padding:24px 0 8px;text-align:left}.hero h1{font-size:1.9rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}.hero p{color:var(--muted);font-size:1.05rem;max-width:620px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+textarea,input[type=text],input[type=number],input[type=date],select{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.9rem}
+textarea{min-height:150px;resize:vertical}textarea:focus,input:focus,select:focus{outline:none;border-color:var(--acc)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+button{cursor:pointer;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}button:hover{filter:brightness(1.08)}
+button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.out{margin-top:14px;padding:14px;background:#0b0d12;border:1px solid var(--line);border-radius:10px;font-size:.95rem}
+.msg{margin-top:10px;padding:10px 13px;border-radius:10px;font-size:.9rem}
+.msg.ok{background:rgba(34,211,166,.12);color:var(--ok);border:1px solid rgba(34,211,166,.3)}
+.label{display:block;font-size:.8rem;color:var(--muted);margin:10px 0 5px;text-transform:uppercase;letter-spacing:.5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:640px){.row2,.row3{grid-template-columns:1fr}.hero h1{font-size:1.5rem}}
+.seo{color:var(--muted);font-size:.95rem;margin-top:30px}.seo h2{color:var(--ink);font-size:1.2rem;margin:1.2em 0 .3em}.seo p{margin:.5em 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.ad-slot{display:flex;align-items:center;justify-content:center;margin:18px 0;min-height:90px;background:var(--card);border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.8rem}
+.crumbs{font-size:.82rem;color:var(--muted);margin:8px 0}.crumbs a{color:var(--muted)}
+.result-box{background:rgba(79,140,255,.1);border:1px solid var(--acc);border-radius:10px;padding:16px;font-size:1.1rem;font-weight:600;color:var(--acc)}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.dice-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.dice{width:60px;height:60px;background:var(--card);border:2px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700}
+.dice.active{border-color:var(--acc);color:var(--acc);background:rgba(79,140,255,.1)}
+.timer-display{font-size:3rem;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:2px;margin:20px 0;padding:20px;background:#0b0d12;border-radius:16px;border:1px solid var(--line)}
+.timer-btn{font-size:1.2rem;padding:14px 28px}
+.retro-words{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.retro-words span{background:#0b0d12;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:.9rem}
+.retro-words span.found{border-color:var(--acc);color:var(--acc);background:rgba(79,140,255,.1)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="/free-tools-hub/">ToolNest<span>.</span></a>
+<a href="/free-tools-hub/about" style="color:var(--muted);font-size:.92rem">About</a>
+</div></header>
+<div class="wrap">
+<div class="crumbs"><a href="/free-tools-hub/">Home</a> › Online Stopwatch &amp; Timer</div>
+<div class="hero">
+<h1>Online Stopwatch &amp; Timer</h1>
+<p>Free online stopwatch with lap times. Start, stop, reset and record lap splits.</p>
+</div>
+<div class="ad-slot"><!-- Adsterra banner --></div>
+<div class="tool">
+<div id="timer" class="timer-display">00:00:00.000</div>
+<div style="text-align:center" class="btns">
+<button class="timer-btn" id="startBtn" onclick="toggle()">Start</button>
+<button class="timer-btn sec" onclick="lap()">Lap</button>
+<button class="timer-btn sec" onclick="reset()">Reset</button>
+</div>
+<div id="laps" style="margin-top:20px"></div>
+</div>
+<div class="ad-slot"><!-- Adsterra banner --></div>
+<div class="seo">
+<h2>About Online Stopwatch &amp; Timer</h2>
+<p>A precision online stopwatch accurate to the millisecond. Use it for timing workouts, cooking, studying, games, experiments, or any activity. Features include start/stop/reset controls and lap timing with split times. Runs entirely in your browser with no ads in the tool area.</p>
+</div>
+</div>
+<footer><div class="wrap">
+<p>© 2026 ToolNest. Free online tools — fast, private, no signup.</p>
+</div></footer>
+<script>var running=false,startT=0,elapsed=0,raf=null,laps=[];
+function $(id){return document.getElementById(id)}
+function fmt(ms){var h=Math.floor(ms/3600000);var m=Math.floor((ms%3600000)/60000);var s=Math.floor((ms%60000)/1000);var ml=Math.floor(ms%1000);return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+'.'+String(ml).padStart(3,'0');}
+function toggle(){if(running){running=false;$('startBtn').textContent='Resume';cancelAnimationFrame(raf);}
+else{running=true;$('startBtn').textContent='Stop';startT=performance.now()-elapsed;tick();}}
+function tick(){if(!running)return;elapsed=performance.now()-startT;$('timer').textContent=fmt(elapsed);raf=requestAnimationFrame(tick);}
+function lap(){if(elapsed===0)return;laps.push(elapsed);var h='<div style="margin-top:6px"><b>Lap '+laps.length+':</b> '+fmt(elapsed);if(laps.length>1){var d=laps[laps.length-1]-laps[laps.length-2];h+=' <span style="color:var(--muted);font-size:.85rem">(+'+fmt(d)+')</span>';}h+='</div>';$('laps').innerHTML=h+laps.map(function(l,i){return '<div style="padding:6px 0;border-bottom:1px solid var(--line);font-size:.9rem">Lap '+(i+1)+': '+fmt(l)+'</div>';}).reverse().join('');}
+function reset(){running=false;elapsed=0;laps=[];$('timer').textContent='00:00:00.000';$('startBtn').textContent='Start';$('laps').innerHTML='';cancelAnimationFrame(raf);}</script>
+</body></html>

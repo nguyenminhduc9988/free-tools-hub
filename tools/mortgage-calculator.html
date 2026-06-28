@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mortgage &amp; Loan Payment Calculator — Free Online Tool | ToolNest</title>
+<meta name="description" content="Calculate monthly mortgage payments, total interest, and amortization schedule.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/mortgage-calculator">
+<meta name="keywords" content="mortgage calculator, loan payment calculator, home loan calculator, mortgage payment, interest calculator">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mortgage &amp; Loan Payment Calculator — Free Online Tool | ToolNest">
+<meta property="og:description" content="Calculate monthly mortgage payments, total interest, and amortization schedule.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/mortgage-calculator">
+<meta name="theme-color" content="#0f1115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Mortgage & Loan Payment Calculator", "description": "Calculate monthly mortgage payments, total interest, and amortization schedule.", "url": "https://nguyenminhduc9988.github.io/free-tools-hub/tools/mortgage-calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<style>:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}.logo span{color:var(--acc2)}
+.hero{padding:24px 0 8px;text-align:left}.hero h1{font-size:1.9rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}.hero p{color:var(--muted);font-size:1.05rem;max-width:620px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+textarea,input[type=text],input[type=number],input[type=date],select{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.9rem}
+textarea{min-height:150px;resize:vertical}textarea:focus,input:focus,select:focus{outline:none;border-color:var(--acc)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+button{cursor:pointer;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}button:hover{filter:brightness(1.08)}
+button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.out{margin-top:14px;padding:14px;background:#0b0d12;border:1px solid var(--line);border-radius:10px;font-size:.95rem}
+.msg{margin-top:10px;padding:10px 13px;border-radius:10px;font-size:.9rem}
+.msg.ok{background:rgba(34,211,166,.12);color:var(--ok);border:1px solid rgba(34,211,166,.3)}
+.label{display:block;font-size:.8rem;color:var(--muted);margin:10px 0 5px;text-transform:uppercase;letter-spacing:.5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:640px){.row2,.row3{grid-template-columns:1fr}.hero h1{font-size:1.5rem}}
+.seo{color:var(--muted);font-size:.95rem;margin-top:30px}.seo h2{color:var(--ink);font-size:1.2rem;margin:1.2em 0 .3em}.seo p{margin:.5em 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.ad-slot{display:flex;align-items:center;justify-content:center;margin:18px 0;min-height:90px;background:var(--card);border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.8rem}
+.crumbs{font-size:.82rem;color:var(--muted);margin:8px 0}.crumbs a{color:var(--muted)}
+.result-box{background:rgba(79,140,255,.1);border:1px solid var(--acc);border-radius:10px;padding:16px;font-size:1.1rem;font-weight:600;color:var(--acc)}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.dice-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.dice{width:60px;height:60px;background:var(--card);border:2px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700}
+.dice.active{border-color:var(--acc);color:var(--acc);background:rgba(79,140,255,.1)}
+.timer-display{font-size:3rem;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:2px;margin:20px 0;padding:20px;background:#0b0d12;border-radius:16px;border:1px solid var(--line)}
+.timer-btn{font-size:1.2rem;padding:14px 28px}
+.retro-words{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.retro-words span{background:#0b0d12;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:.9rem}
+.retro-words span.found{border-color:var(--acc);color:var(--acc);background:rgba(79,140,255,.1)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="/free-tools-hub/">ToolNest<span>.</span></a>
+<a href="/free-tools-hub/about" style="color:var(--muted);font-size:.92rem">About</a>
+</div></header>
+<div class="wrap">
+<div class="crumbs"><a href="/free-tools-hub/">Home</a> › Mortgage &amp; Loan Payment Calculator</div>
+<div class="hero">
+<h1>Mortgage &amp; Loan Payment Calculator</h1>
+<p>Calculate monthly mortgage payments, total interest, and amortization schedule.</p>
+</div>
+<div class="ad-slot"><!-- Adsterra banner --></div>
+<div class="tool">
+<div class="row2">
+<div><label class="label">Loan amount ($)</label><input id="principal" type="text" value="300000" oninput="calc()"></div>
+<div><label class="label">Interest rate (%)</label><input id="rate" type="text" value="6.5" oninput="calc()"></div>
+</div>
+<div class="row2">
+<div><label class="label">Loan term (years)</label><input id="years" type="text" value="30" oninput="calc()"></div>
+<div><label class="label">Down payment ($)</label><input id="down" type="text" value="60000" oninput="calc()"></div>
+</div>
+<div class="btns"><button onclick="calc()">Calculate</button></div>
+<div id="out" style="margin-top:16px"></div>
+<div id="schedule" style="margin-top:16px;max-height:300px;overflow-y:auto"></div>
+</div>
+<div class="ad-slot"><!-- Adsterra banner --></div>
+<div class="seo">
+<h2>About Mortgage &amp; Loan Payment Calculator</h2>
+<p>Calculate your monthly mortgage or loan payment instantly. Enter the home price, down payment, interest rate and loan term to see your monthly payment, total interest paid, and a full amortization schedule. This mortgage calculator helps you compare different loan scenarios and understand the true cost of financing.</p>
+</div>
+</div>
+<footer><div class="wrap">
+<p>© 2026 ToolNest. Free online tools — fast, private, no signup.</p>
+</div></footer>
+<script>function $(id){return document.getElementById(id)}
+function calc(){
+  var p=parseFloat($('principal').value)||0;var r=(parseFloat($('rate').value)||0)/100/12;
+  var y=parseInt($('years').value)||30;var d=parseFloat($('down').value)||0;
+  var loan=p-d;var n=y*12;
+  if(!loan||!n){$('out').innerHTML='';return;}
+  var mp=r>0?loan*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1):loan/n;
+  var total=mp*n;var interest=total-loan;
+  $('out').innerHTML=
+    '<div class="result-box">$'+mp.toFixed(2)+'<span style="font-size:.85rem;color:var(--muted)"> / month</span></div>'+
+    '<div class="row3" style="margin-top:12px">'+
+      '<div style="padding:12px;background:#0b0d12;border-radius:8px;text-align:center"><div style="color:var(--muted);font-size:.75rem">Total paid</div><div style="font-weight:700;color:var(--acc)">$'+total.toFixed(0)+'</div></div>'+
+      '<div style="padding:12px;background:#0b0d12;border-radius:8px;text-align:center"><div style="color:var(--muted);font-size:.75rem">Total interest</div><div style="font-weight:700;color:var(--err)">$'+interest.toFixed(0)+'</div></div>'+
+      '<div style="padding:12px;background:#0b0d12;border-radius:8px;text-align:center"><div style="color:var(--muted);font-size:.75rem">Loan amount</div><div style="font-weight:700">$'+loan.toFixed(0)+'</div></div>'+
+    '</div>';
+  // Show first 12 months amortization
+  var bal=loan;var h='<table style="width:100%;font-size:.8rem;border-collapse:collapse;margin-top:10px"><tr style="color:var(--muted);border-bottom:1px solid var(--line)"><th style="padding:4px;text-align:left">Month</th><th style="text-align:right">Payment</th><th style="text-align:right">Principal</th><th style="text-align:right">Interest</th><th style="text-align:right">Balance</th></tr>';
+  for(var i=1;i<=Math.min(n,12);i++){var intPay=bal*r;var princPay=mp-intPay;bal-=princPay;
+    h+='<tr style="border-bottom:1px solid var(--line)"><td>'+i+'</td><td style="text-align:right">$'+mp.toFixed(2)+'</td><td style="text-align:right;color:var(--acc)">$'+princPay.toFixed(2)+'</td><td style="text-align:right;color:var(--err)">$'+intPay.toFixed(2)+'</td><td style="text-align:right">$'+bal.toFixed(2)+'</td></tr>';}
+  if(n>12)h+='<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:8px">… '+n+' months total</td></tr>';
+  h+='</table>';$('schedule').innerHTML=h;
+}</script>
+</body></html>
