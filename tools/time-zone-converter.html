@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Time Zone Converter — Convert Time Between Cities | ToolNest</title>
+<meta name="description" content="Convert times between any two time zones instantly. World clock, meeting planner, UTC offset converter.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/time-zone-converter">
+<meta name="keywords" content="time zone converter, world clock, utc converter, meeting planner, time difference, est to pst, gmt converter">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Time Zone Converter — Convert Time Between Cities | ToolNest">
+<meta property="og:description" content="Convert times between any two time zones instantly. World clock, meeting planner, UTC offset converter.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/time-zone-converter">
+<meta name="theme-color" content="#0f1115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Time Zone Converter — Convert Time Between Cities", "description": "Convert times between any two time zones instantly. World clock, meeting planner, UTC offset converter.", "url": "https://nguyenminhduc9988.github.io/free-tools-hub/tools/time-zone-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}.logo span{color:var(--acc2)}
+.nav a.lnk{color:var(--muted);font-size:.92rem}.nav a.lnk:hover{color:var(--ink);text-decoration:none}
+.hero{padding:46px 0 22px;text-align:center}.hero h1{font-size:2.4rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}.hero p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:6px auto 0}
+section.body{padding:14px 0 50px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+textarea,input[type=text],input[type=number],input[type=date],select{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.9rem}
+textarea{min-height:150px;resize:vertical}textarea:focus,input:focus,select:focus{outline:none;border-color:var(--acc)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+button{cursor:pointer;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}button:hover{filter:brightness(1.08)}
+button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.out{margin-top:14px;padding:14px;background:#0b0d12;border:1px solid var(--line);border-radius:10px;font-size:.95rem}
+.msg{margin-top:10px;padding:10px 13px;border-radius:10px;font-size:.9rem}
+.msg.ok{background:rgba(34,211,166,.12);color:var(--ok);border:1px solid rgba(34,211,166,.3)}
+.msg.err{background:rgba(255,107,107,.12);color:var(--err);border:1px solid rgba(255,107,107,.3)}
+.label{display:block;font-size:.8rem;color:var(--muted);margin:10px 0 5px;text-transform:uppercase;letter-spacing:.5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:640px){.row2,.row3{grid-template-columns:1fr}.hero h1{font-size:1.9rem}}
+.seo{color:var(--muted);font-size:.95rem;margin-top:30px}.seo h2{color:var(--ink);font-size:1.2rem;margin:1.2em 0 .3em}.seo p{margin:.5em 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.ad-slot{display:flex;align-items:center;justify-content:center;margin:18px 0;min-height:90px;background:var(--card);border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.8rem}
+.crumbs{font-size:.82rem;color:var(--muted);margin:8px 0}.crumbs a{color:var(--muted)}
+.result-box{background:rgba(79,140,255,.1);border:1px solid var(--acc);border-radius:10px;padding:16px;font-size:1.1rem;font-weight:600;color:var(--acc)}
+input[type=range]{width:100%;accent-color:var(--acc)}
+input[type=color]{width:100%;height:50px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.swatch{display:inline-block;width:60px;height:60px;border-radius:10px;margin:5px;vertical-align:middle;box-shadow:0 0 0 1px var(--line);cursor:pointer}
+.stat{text-align:center;padding:16px;background:#0b0d12;border:1px solid var(--line);border-radius:10px}.stat .v{font-size:1.8rem;font-weight:800;color:var(--acc2)}.stat .l{font-size:.8rem;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="/free-tools-hub/">ToolNest<span>.</span></a>
+<a class="lnk" href="/free-tools-hub/">All Tools</a>
+<a class="lnk" href="/free-tools-hub/about">About</a>
+</div></header>
+<div class="wrap">
+<div class="hero"><h1>Time Zone Converter</h1><p>Convert times between any two time zones instantly. World clock, meeting planner, UTC offset converter.</p></div>
+<div class="ad-slot" data-ad="banner">
+  <script type="text/javascript">
+    atOptions = {'key' : '5392577','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+  </script>
+</div>
+<section class="body">
+
+<div class="tool">
+<h2>Convert Time Between Zones</h2>
+<div class="row2">
+<div><label class="label">From Time Zone</label><select id="fromTz"></select></div>
+<div><label class="label">To Time Zone</label><select id="toTz"></select></div>
+</div>
+<label class="label">Date &amp; Time (in "From" zone)</label>
+<input type="datetime-local" id="dt" step="60">
+<div class="btns"><button onclick="convert()">Convert</button><button class="sec" onclick="swapZones()">Swap Zones</button></div>
+<div class="result-box" id="r" style="margin-top:14px;white-space:pre-line">Enter a time and click Convert.</div>
+</div>
+<div class="tool">
+<h2>World Clock — Major Cities</h2>
+<div id="clocks" class="row3"></div>
+</div>
+<script>
+const zones=["UTC","Africa/Johannesburg","America/Anchorage","America/Argentina/Buenos_Aires","America/Chicago","America/Denver","America/Los_Angeles","America/Mexico_City","America/New_York","America/Sao_Paulo","America/Toronto","Asia/Bangkok","Asia/Dubai","Asia/Hong_Kong","Asia/Jerusalem","Asia/Kolkata","Asia/Seoul","Asia/Shanghai","Asia/Singapore","Asia/Tokyo","Australia/Sydney","Europe/Amsterdam","Europe/Berlin","Europe/London","Europe/Madrid","Europe/Moscow","Europe/Paris","Europe/Rome","Pacific/Auckland","Pacific/Honolulu"];
+const cities={"UTC":"UTC","Asia/Singapore":"Singapore","Asia/Tokyo":"Tokyo","Asia/Shanghai":"Shanghai","Asia/Hong_Kong":"Hong Kong","Asia/Kolkata":"New Delhi","Asia/Bangkok":"Bangkok","Asia/Seoul":"Seoul","Asia/Dubai":"Dubai","Asia/Jerusalem":"Jerusalem","Europe/London":"London","Europe/Paris":"Paris","Europe/Berlin":"Berlin","Europe/Madrid":"Madrid","Europe/Rome":"Rome","Europe/Amsterdam":"Amsterdam","Europe/Moscow":"Moscow","America/New_York":"New York","America/Toronto":"Toronto","America/Chicago":"Chicago","America/Denver":"Denver","America/Los_Angeles":"Los Angeles","America/Mexico_City":"Mexico City","America/Sao_Paulo":"São Paulo","America/Anchorage":"Anchorage","America/Argentina/Buenos_Aires":"Buenos Aires","Africa/Johannesburg":"Johannesburg","Australia/Sydney":"Sydney","Pacific/Auckland":"Auckland","Pacific/Honolulu":"Honolulu"};
+const sel1=document.getElementById('fromTz'),sel2=document.getElementById('toTz');
+zones.forEach(z=>{sel1.add(new Option(cities[z]+' ('+z+')',z));sel2.add(new Option(cities[z]+' ('+z+')',z));});
+sel1.value='America/New_York';sel2.value='Asia/Singapore';
+const now=new Date();now.setMinutes(now.getMinutes()-now.getTimezoneOffset());
+document.getElementById('dt').value=now.toISOString().slice(0,16);
+function convert(){const v=document.getElementById('dt').value;if(!v)return;const dt=new Date(v);if(isNaN(dt)){document.getElementById('r').innerText='Invalid date';return;}const f=sel1.value,t=sel2.value;const fmt=(d,z)=>d.toLocaleString('en-US',{timeZone:z,dateStyle:'full',timeStyle:'short'});document.getElementById('r').innerText=cities[f]+': '+fmt(dt,f)+'\n'+cities[t]+': '+fmt(dt,t)+'\n\nUTC: '+dt.toUTCString();}
+function swapZones(){const a=sel1.value;sel1.value=sel2.value;sel2.value=a;convert();}
+const major=["America/New_York","Europe/London","Asia/Singapore","Asia/Tokyo","Asia/Kolkata","Australia/Sydney"];
+function renderClocks(){const el=document.getElementById('clocks');el.innerHTML=major.map(z=>{const t=new Date().toLocaleTimeString('en-US',{timeZone:z,hour:'2-digit',minute:'2-digit',second:'2-digit'});return '<div class="stat"><div class="v">'+t+'</div><div class="l">'+cities[z]+'</div></div>';}).join('');}
+renderClocks();setInterval(renderClocks,1000);convert();
+</script>
+
+<div class="ad-slot" data-ad="footer">
+  <script type="text/javascript">
+    atOptions = {'key' : '5392577','format' : 'iframe','height' : 250,'width' : 300,'params' : {}};
+  </script>
+</div>
+<div class="seo">
+<h2>Free Time Zone Converter — For Remote Teams & Travelers</h2>
+<p>Plan meetings across time zones with this free world clock converter. Whether you're coordinating with teams in <strong>Singapore, New York, London, Tokyo</strong> or anywhere else, this tool shows the exact equivalent time in any zone with full date and UTC reference. No login required — completely private in your browser.</p><p>Common conversions: <strong>EST to PST</strong>, <strong>GMT to IST</strong>, <strong>UTC to local</strong>, <strong>PST to CET</strong>. Uses your browser's native Intl API for DST-accurate results.</p>
+</div>
+</div>
+<footer><div class="wrap">
+<p>&copy; 2026 ToolNest. Free online tools — fast, private, no signup.</p>
+<p>Tools run entirely in your browser. Your data never leaves your device.</p>
+</div></footer>
+</body></html>

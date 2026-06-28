@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PX to REM Converter — CSS Unit Calculator | ToolNest</title>
+<meta name="description" content="Convert pixels (px) to rem units based on root font size. Live, accurate, perfect for responsive CSS development.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/px-to-rem-converter">
+<meta name="keywords" content="px to rem, pixel to rem converter, css unit converter, rem calculator, px to em, root em converter">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PX to REM Converter — CSS Unit Calculator | ToolNest">
+<meta property="og:description" content="Convert pixels (px) to rem units based on root font size. Live, accurate, perfect for responsive CSS development.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/px-to-rem-converter">
+<meta name="theme-color" content="#0f1115">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "PX to REM Converter — CSS Unit Calculator", "description": "Convert pixels (px) to rem units based on root font size. Live, accurate, perfect for responsive CSS development.", "url": "https://nguyenminhduc9988.github.io/free-tools-hub/tools/px-to-rem-converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}.logo span{color:var(--acc2)}
+.nav a.lnk{color:var(--muted);font-size:.92rem}.nav a.lnk:hover{color:var(--ink);text-decoration:none}
+.hero{padding:46px 0 22px;text-align:center}.hero h1{font-size:2.4rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}.hero p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:6px auto 0}
+section.body{padding:14px 0 50px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+textarea,input[type=text],input[type=number],input[type=date],select{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.9rem}
+textarea{min-height:150px;resize:vertical}textarea:focus,input:focus,select:focus{outline:none;border-color:var(--acc)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+button{cursor:pointer;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}button:hover{filter:brightness(1.08)}
+button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.out{margin-top:14px;padding:14px;background:#0b0d12;border:1px solid var(--line);border-radius:10px;font-size:.95rem}
+.msg{margin-top:10px;padding:10px 13px;border-radius:10px;font-size:.9rem}
+.msg.ok{background:rgba(34,211,166,.12);color:var(--ok);border:1px solid rgba(34,211,166,.3)}
+.msg.err{background:rgba(255,107,107,.12);color:var(--err);border:1px solid rgba(255,107,107,.3)}
+.label{display:block;font-size:.8rem;color:var(--muted);margin:10px 0 5px;text-transform:uppercase;letter-spacing:.5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:640px){.row2,.row3{grid-template-columns:1fr}.hero h1{font-size:1.9rem}}
+.seo{color:var(--muted);font-size:.95rem;margin-top:30px}.seo h2{color:var(--ink);font-size:1.2rem;margin:1.2em 0 .3em}.seo p{margin:.5em 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.ad-slot{display:flex;align-items:center;justify-content:center;margin:18px 0;min-height:90px;background:var(--card);border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.8rem}
+.crumbs{font-size:.82rem;color:var(--muted);margin:8px 0}.crumbs a{color:var(--muted)}
+.result-box{background:rgba(79,140,255,.1);border:1px solid var(--acc);border-radius:10px;padding:16px;font-size:1.1rem;font-weight:600;color:var(--acc)}
+input[type=range]{width:100%;accent-color:var(--acc)}
+input[type=color]{width:100%;height:50px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.swatch{display:inline-block;width:60px;height:60px;border-radius:10px;margin:5px;vertical-align:middle;box-shadow:0 0 0 1px var(--line);cursor:pointer}
+.stat{text-align:center;padding:16px;background:#0b0d12;border:1px solid var(--line);border-radius:10px}.stat .v{font-size:1.8rem;font-weight:800;color:var(--acc2)}.stat .l{font-size:.8rem;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="/free-tools-hub/">ToolNest<span>.</span></a>
+<a class="lnk" href="/free-tools-hub/">All Tools</a>
+<a class="lnk" href="/free-tools-hub/about">About</a>
+</div></header>
+<div class="wrap">
+<div class="hero"><h1>PX to REM Converter</h1><p>Convert pixels (px) to rem units based on root font size. Live, accurate, perfect for responsive CSS development.</p></div>
+<div class="ad-slot" data-ad="banner">
+  <script type="text/javascript">
+    atOptions = {'key' : '5392577','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};
+  </script>
+</div>
+<section class="body">
+
+<div class="tool">
+<h2>Convert Pixels to REM</h2>
+<label class="label">Root Font Size (px) — default 16</label>
+<input type="number" id="root" value="16" min="1" oninput="conv()">
+<div class="row2">
+<div><label class="label">Pixels (px)</label><input type="number" id="px" value="16" oninput="conv()" placeholder="16"></div>
+<div><label class="label">REM</label><input type="number" id="rem" value="1" oninput="convRem()" placeholder="1"></div>
+</div>
+<div class="result-box" id="r" style="margin-top:14px">16px = 1rem</div>
+</div>
+<div class="tool">
+<h2>Quick Reference Table</h2>
+<div id="tbl"></div>
+</div>
+<script>
+function conv(){const r=parseFloat(document.getElementById('root').value)||16;const p=parseFloat(document.getElementById('px').value);if(isNaN(p))return;const rem=(p/r).toFixed(4);document.getElementById('rem').value=rem;document.getElementById('r').innerText=p+'px = '+rem+'rem  (at '+r+'px base)';}
+function convRem(){const r=parseFloat(document.getElementById('root').value)||16;const rm=parseFloat(document.getElementById('rem').value);if(isNaN(rm))return;const px=(rm*r).toFixed(2);document.getElementById('px').value=px;document.getElementById('r').innerText=rm+'rem = '+px+'px  (at '+r+'px base)';}
+function buildTbl(){const sizes=[8,10,12,14,16,18,20,24,28,32,36,40,48,56,64];const html='<tr style="color:var(--muted);text-align:left"><th style="padding:8px;border-bottom:1px solid var(--line)">PX</th><th style="padding:8px;border-bottom:1px solid var(--line)">REM (base 16)</th></tr>'+sizes.map(p=>'<tr><td style="padding:8px;border-bottom:1px solid var(--line)">'+p+'px</td><td style="padding:8px;border-bottom:1px solid var(--line);color:var(--acc2)">'+(p/16).toFixed(4)+'rem</td></tr>').join('');document.getElementById('tbl').innerHTML='<table>'+html+'</table>';}
+buildTbl();conv();
+</script>
+
+<div class="ad-slot" data-ad="footer">
+  <script type="text/javascript">
+    atOptions = {'key' : '5392577','format' : 'iframe','height' : 250,'width' : 300,'params' : {}};
+  </script>
+</div>
+<div class="seo">
+<h2>Why Use REM Instead of PX in CSS?</h2>
+<p><strong>rem</strong> (root em) units are relative to the root <code>&lt;html&gt;</code> font size, usually 16px by default. Using rem lets your design scale naturally when users zoom or change their browser's default font size, making it more accessible than fixed pixel values.</p><p>Common conversions at 16px base: <strong>1rem = 16px</strong>, <strong>0.5rem = 8px</strong>, <strong>1.5rem = 24px</strong>, <strong>2rem = 32px</strong>. Change the root font size above to match your project's setup.</p>
+</div>
+</div>
+<footer><div class="wrap">
+<p>&copy; 2026 ToolNest. Free online tools — fast, private, no signup.</p>
+<p>Tools run entirely in your browser. Your data never leaves your device.</p>
+</div></footer>
+</body></html>
