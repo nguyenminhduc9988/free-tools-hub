@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fuel Cost Calculator &mdash; Free Online Tool | ToolNest</title>
+<meta name="description" content="Calculate the cost of gas for your trip. Enter distance, fuel efficiency, and gas price to estimate fuel costs instantly.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/fuel-cost-calculator">
+<meta name="keywords" content="fuel cost calculator, gas cost calculator, road trip fuel cost, fuel price calculator, how much gas will cost">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fuel Cost Calculator &mdash; Free Online Tool | ToolNest">
+<meta property="og:description" content="Calculate the cost of gas for your trip. Enter distance, fuel efficiency, and gas price to estimate fuel costs instantly.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/fuel-cost-calculator">
+<meta name="theme-color" content="#0f1115">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Fuel Cost Calculator","description":"Calculate the cost of gas for your trip. Enter distance, fuel efficiency, and gas price to estimate fuel costs instantly.","url":"https://nguyenminhduc9988.github.io/free-tools-hub/tools/fuel-cost-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+
+<style>
+:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}.logo span{color:var(--acc2)}
+.nav a.lnk{color:var(--muted);font-size:.92rem}.nav a.lnk:hover{color:var(--ink);text-decoration:none}
+.hero{padding:46px 0 22px;text-align:center}.hero h1{font-size:2.4rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}.hero p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:6px auto 0}
+section.body{padding:14px 0 50px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
+textarea,input[type=text],input[type=number],input[type=date],input[type=time],input[type=tel],select{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.9rem}
+textarea{min-height:150px;resize:vertical}textarea:focus,input:focus,select:focus{outline:none;border-color:var(--acc)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+button{cursor:pointer;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}button:hover{filter:brightness(1.08)}
+button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.out{margin-top:14px;padding:14px;background:#0b0d12;border:1px solid var(--line);border-radius:10px;font-size:.95rem}
+.msg{margin-top:10px;padding:10px 13px;border-radius:10px;font-size:.9rem}
+.msg.ok{background:rgba(34,211,166,.12);color:var(--ok);border:1px solid rgba(34,211,166,.3)}
+.msg.err{background:rgba(255,107,107,.12);color:var(--err);border:1px solid rgba(255,107,107,.3)}
+.label{display:block;font-size:.8rem;color:var(--muted);margin:10px 0 5px;text-transform:uppercase;letter-spacing:.5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:640px){.row2,.row3{grid-template-columns:1fr}.hero h1{font-size:1.9rem}}
+.seo{color:var(--muted);font-size:.95rem;margin-top:30px}.seo h2{color:var(--ink);font-size:1.2rem;margin:1.2em 0 .3em}.seo p{margin:.5em 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.crumbs{font-size:.82rem;color:var(--muted);margin:8px 0}.crumbs a{color:var(--muted)}
+.result-box{background:rgba(79,140,255,.1);border:1px solid var(--acc);border-radius:10px;padding:16px;font-size:1.1rem;font-weight:600;color:var(--acc)}
+table{width:100%;border-collapse:collapse;margin:14px 0}th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}th{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}tr:hover{background:rgba(79,140,255,.05)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><nav class="nav"><a class="logo" href="https://nguyenminhduc9988.github.io/free-tools-hub/">Tool<span>Nest</span></a><a class="lnk" href="https://nguyenminhduc9988.github.io/free-tools-hub/">All Tools</a></nav></div></header>
+<div class="wrap"><div class="crumbs"><a href="https://nguyenminhduc9988.github.io/free-tools-hub/">Home</a> &rsaquo; <span>Fuel Cost Calculator</span></div></div>
+<div class="hero"><div class="wrap"><h1>Fuel Cost Calculator</h1><p>Calculate the cost of gas for your trip. Enter distance, fuel efficiency, and gas price to estimate fuel costs instantly.</p></div></div>
+<section class="body"><div class="wrap">
+<div class="tool">
+<h3>Calculate Fuel Cost</h3>
+<div class="row3">
+<div><label class="label">Trip Distance</label><input type="number" id="dist" value="500" min="0" step="10"></div>
+<div><label class="label">Fuel Efficiency</label><input type="number" id="mpg" value="30" min="1" step="1"></div>
+<div><label class="label">Gas Price ($/gallon)</label><input type="number" id="price" value="3.50" min="0" step="0.01"></div>
+</div>
+<div class="btns"><button onclick="calcFuel()">Calculate</button></div>
+<div id="fuelResult" class="result-box" style="display:none;margin-top:14px"></div>
+</div>
+<div class="tool">
+<h3>Compare Vehicles</h3>
+<p style="color:var(--muted);font-size:.9rem">See how much you save with better fuel efficiency</p>
+<div class="row2">
+<div><label class="label">Your Car MPG</label><input type="number" id="cmpg" value="25" min="1"></div>
+<div><label class="label">More Efficient Car MPG</label><input type="number" id="empg" value="40" min="1"></div>
+</div>
+<label class="label">Annual Miles Driven</label><input type="number" id="amiles" value="15000" min="0" step="1000">
+<label class="label">Gas Price ($/gallon)</label><input type="number" id="aprice" value="3.50" min="0" step="0.01">
+<div class="btns"><button onclick="calcCompare()">Compare</button></div>
+<div id="cmpResult" style="margin-top:14px"></div>
+</div>
+<script>
+function calcFuel(){const d=+document.getElementById('dist').value,m=+document.getElementById('mpg').value,p=+document.getElementById('price').value;
+const gal=d/m,cost=gal*p;
+document.getElementById('fuelResult').style.display='block';
+document.getElementById('fuelResult').innerHTML=`Gallons needed: <strong>${gal.toFixed(1)}</strong><br>Total fuel cost: <strong>$${cost.toFixed(2)}</strong>`;}
+function calcCompare(){const c=+document.getElementById('cmpg').value,e=+document.getElementById('empg').value,m=+document.getElementById('amiles').value,p=+document.getElementById('aprice').value;
+const cCost=m/c*p,eCost=m/e*p,saved=cCost-eCost;
+document.getElementById('cmpResult').innerHTML=`<table><tr><th></th><th>Your Car (${c} MPG)</th><th>Efficient Car (${e} MPG)</th></tr>
+<tr><td>Annual Fuel Cost</td><td>$${cCost.toFixed(0)}</td><td>$${eCost.toFixed(0)}</td></tr></table>
+<div class="result-box" style="margin-top:10px">You save: <strong>$${saved.toFixed(0)}/year</strong></div>`;}
+</script>
+
+</div></section>
+<footer><div class="wrap"><p>&copy; 2026 ToolNest. Free online tools &mdash; fast, private, no signup.</p>
+<p style="margin-top:8px;font-size:.8rem">Our Network: <a href="https://nguyenminhduc9988.github.io/ai-tool-hub/">AI Tool Hub</a> &middot; <a href="https://nguyenminhduc9988.github.io/money-maker-hub/">Money Maker Hub</a> &middot; <a href="https://nguyenminhduc9988.github.io/tech-deals-hub/">Tech Deals Hub</a> &middot; <a href="https://nguyenminhduc9988.github.io/remote-work-hq/">Remote Work HQ</a> &middot; <a href="https://nguyenminhduc9988.github.io/finance-daily/">Finance Daily</a> &middot; <a href="https://nguyenminhduc9988.github.io/health-today/">Health Today</a> &middot; <a href="https://nguyenminhduc9988.github.io/productivity-hacks/">Productivity Hacks</a> &middot; <a href="https://nguyenminhduc9988.github.io/crypto-brief/">Crypto Brief</a> &middot; <a href="https://nguyenminhduc9988.github.io/free-tools-hub/">ToolNest</a></p></div></footer>
+</body></html>
