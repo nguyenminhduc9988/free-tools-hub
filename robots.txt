@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nguyenminhduc9988.github.io/free-tools-hub/sitemap.xml
