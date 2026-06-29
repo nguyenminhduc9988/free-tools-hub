@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Cron Expression Generator & Explainer — Visual Cron Builder | ToolNest</title>
+<meta name="description" content="Build, test, and explain cron expressions visually. Supports 5, 6, and 7 field formats with human-readable explanations and next execution times.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/cron-expression-generator.html">
+<meta name="keywords" content="cron expression generator, cron builder, cron job helper, schedule expression, crontab generator, cron explained">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="REPLACE_WITH_YOUR_GSC_CODE">
+<script async defer data-website-id="free-tools-hub" src="https://analytics.lsouls.com/script.js"></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Cron Expression Generator & Explainer">
+<meta property="og:description" content="Build, test, and explain cron expressions visually with human-readable explanations.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/cron-expression-generator.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Cron Expression Generator","description":"Build, test, and explain cron expressions visually.","url":"https://nguyenminhduc9988.github.io/free-tools-hub/tools/cron-expression-generator.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:700px;margin:0 auto;padding:20px}
+h1{font-size:1.6rem;font-weight:800;margin-bottom:4px}h1 span{color:var(--acc2)}
+.subtitle{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+.result-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0;font-family:'SFMono-Regular',Consolas,monospace;font-size:1.2rem;text-align:center;letter-spacing:1px;color:var(--acc2);word-break:break-all}
+.explanation{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+.explanation h3{margin:0 0 8px;font-size:.95rem;color:var(--acc)}
+.explanation p{margin:0;color:var(--ink)}
+.field-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:16px 0}
+.field{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
+.field label{display:block;font-size:.75rem;color:var(--muted);margin-bottom:4px;text-transform:uppercase}
+.field select,.field input{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px;font-size:.85rem;text-align:center}
+.field select:focus,.field input:focus{outline:none;border-color:var(--acc)}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.presets button{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:.8rem;cursor:pointer;transition:.15s}
+.presets button:hover{border-color:var(--acc);color:var(--acc)}
+.presets button.active{background:var(--acc);color:#fff;border-color:var(--acc)}
+.next-times{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+.next-times h3{margin:0 0 8px;font-size:.95rem;color:var(--acc)}
+.next-times ul{list-style:none;padding:0;margin:0}
+.next-times li{padding:6px 0;border-bottom:1px solid var(--line);font-family:monospace;font-size:.9rem}
+.next-times li:last-child{border:none}
+.section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0}
+.section h3{margin:0 0 8px;font-size:.95rem;color:var(--acc)}
+.section p,.section li{color:var(--muted);font-size:.85rem}
+.section code{background:#0b0d12;padding:2px 6px;border-radius:4px;font-size:.82rem;color:var(--acc2)}
+@media(max-width:480px){.field-grid{grid-template-columns:repeat(5,1fr);gap:4px}.field{padding:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>⏱️ <span>Cron Expression</span> Generator</h1>
+<p class="subtitle">Build, test, and understand cron expressions visually. Free, no signup.</p>
+
+<div class="result-box" id="cronExpr">* * * * *</div>
+
+<div class="explanation" id="explanation">
+<h3>Human-Readable</h3>
+<p id="humanReadable">Runs every minute</p>
+</div>
+
+<div class="section">
+<h3>Quick Presets</h3>
+<div class="presets">
+<button onclick="setPreset('* * * * *')">Every minute</button>
+<button onclick="setPreset('0 * * * *')">Every hour</button>
+<button onclick="setPreset('0 0 * * *')">Daily at midnight</button>
+<button onclick="setPreset('0 */6 * * *')">Every 6 hours</button>
+<button onclick="setPreset('0 9 * * 1-5')">Weekdays at 9am</button>
+<button onclick="setPreset('0 0 * * 0')">Weekly (Sunday)</button>
+<button onclick="setPreset('0 0 1 * *')">Monthly (1st)</button>
+<button onclick="setPreset('0 0 1 1 *')">Yearly (Jan 1)</button>
+<button onclick="setPreset('*/5 * * * *')">Every 5 min</button>
+<button onclick="setPreset('*/15 * * * *')">Every 15 min</button>
+<button onclick="setPreset('30 4 * * *')">Daily at 4:30am</button>
+<button onclick="setPreset('0 12 * * 1')">Mondays at noon</button>
+</div>
+</div>
+
+<div class="section">
+<h3>Build Expression</h3>
+<div class="field-grid">
+<div class="field">
+<label>Minute</label>
+<select id="f_min" onchange="buildExpr()">
+<option value="*">*</option><option value="0">0</option><option value="*/5">*/5</option><option value="*/10">*/10</option><option value="*/15">*/15</option><option value="*/30">*/30</option>
+<option value="0,30">0,30</option>
+</select>
+</div>
+<div class="field">
+<label>Hour</label>
+<select id="f_hour" onchange="buildExpr()">
+<option value="*">*</option><option value="0">0</option><option value="*/2">*/2</option><option value="*/4">*/4</option><option value="*/6">*/6</option><option value="*/8">*/8</option><option value="*/12">*/12</option>
+<option value="9">9</option><option value="12">12</option><option value="17">17</option>
+</select>
+</div>
+<div class="field">
+<label>Day</label>
+<select id="f_day" onchange="buildExpr()">
+<option value="*">*</option><option value="1">1</option><option value="15">15</option><option value="*/2">*/2</option>
+</select>
+</div>
+<div class="field">
+<label>Month</label>
+<select id="f_month" onchange="buildExpr()">
+<option value="*">*</option><option value="1">Jan</option><option value="*/3">*/3</option><option value="*/6">*/6</option>
+</select>
+</div>
+<div class="field">
+<label>Weekday</label>
+<select id="f_weekday" onchange="buildExpr()">
+<option value="*">*</option><option value="1-5">Mon-Fri</option><option value="0,6">Weekends</option><option value="1">Mon</option><option value="5">Fri</option>
+</select>
+</div>
+</div>
+</div>
+
+<div class="next-times" id="nextTimes">
+<h3>Next 10 Executions</h3>
+<ul id="nextList"></ul>
+</div>
+
+<div class="section">
+<h3>How Cron Works</h3>
+<p>A cron expression is 5 fields separated by spaces:</p>
+<p style="margin:8px 0"><code>minute hour day month weekday</code></p>
+<ul style="padding-left:20px">
+<li><code>*</code> — any value</li>
+<li><code>*/n</code> — every n units</li>
+<li><code>n,m</code> — specific values</li>
+<li><code>n-m</code> — range</li>
+</ul>
+</div>
+
+<nav class="mojo-network" style="background:#0f1115;padding:20px;text-align:center;border-top:1px solid #262b36;margin-top:40px">
+<p style="color:#9aa3b2;font-size:.85rem;margin-bottom:10px">Part of the <strong style="color:#22d3a6">MOJO Network</strong></p>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:800px;margin:0 auto">
+<a href="https://nguyenminhduc9988.github.io/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">🔧 ToolNest</a>
+<a href="https://nguyenminhduc9988.github.io/crypto-brief/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">₿ Crypto Brief</a>
+<a href="https://nguyenminhduc9988.github.io/finance-daily/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">💰 Finance Daily</a>
+<a href="https://nguyenminhduc9988.github.io/productivity-hacks/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">⚡ Productivity</a>
+</div>
+</nav>
+</div>
+
+<script>
+const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const weekdays=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+function setPreset(expr){
+  const parts=expr.split(' ');
+  document.getElementById('f_min').value=parts[0];
+  document.getElementById('f_hour').value=parts[1];
+  document.getElementById('f_day').value=parts[2];
+  document.getElementById('f_month').value=parts[3];
+  document.getElementById('f_weekday').value=parts[4];
+  buildExpr();
+}
+
+function buildExpr(){
+  const expr=[
+    document.getElementById('f_min').value,
+    document.getElementById('f_hour').value,
+    document.getElementById('f_day').value,
+    document.getElementById('f_month').value,
+    document.getElementById('f_weekday').value
+  ].join(' ');
+  document.getElementById('cronExpr').textContent=expr;
+  explain(expr);
+  calcNext(expr);
+}
+
+function explain(expr){
+  const p=expr.split(' ');
+  let text='';
+  const fieldNames=['minute','hour','day of month','month','day of week'];
+  
+  for(let i=0;i<5;i++){
+    let desc='';
+    const v=p[i];
+    if(v==='*'){desc='every '+fieldNames[i];}
+    else if(v.startsWith('*/')){
+      const n=v.substring(2);
+      desc='every '+n+' '+fieldNames[i]+'s';
+    }
+    else if(v.includes('-')){
+      const [a,b]=v.split('-');
+      if(i===4) desc=weekdays.slice(a,b===undefined?6:parseInt(b)+1).join(', ');
+      else if(i===3) desc=months.slice(a-1,b===undefined?12:parseInt(b)).join(', ');
+      else desc=a+' through '+(b||'end');
+    }
+    else if(v.includes(',')){
+      const vals=v.split(',');
+      if(i===4) desc=vals.map(x=>weekdays[x]).join(', ');
+      else if(i===3) desc=vals.map(x=>months[x-1]).join(', ');
+      else desc=v;
+    }
+    else{
+      if(i===4&&v!=='*') desc=weekdays[v];
+      else if(i===3&&v!=='*') desc=months[v-1];
+      else if(i===1&&v!=='*') desc='at '+v+':00';
+      else if(i===0&&v!=='*') desc='at minute '+v;
+      else desc=v;
+    }
+    text+=desc+(i<4?', ':'');
+  }
+  document.getElementById('humanReadable').textContent='Runs '+text;
+}
+
+function calcNext(expr){
+  const p=expr.split(' ');
+  const results=[];
+  const now=new Date();
+  
+  function matches(d){
+    const m=p[0],h=p[1],dom=p[2],mon=p[3],dow=p[4];
+    if(m!=='*'&&!matchField(d.getMinutes(),m)) return false;
+    if(h!=='*'&&!matchField(d.getHours(),h)) return false;
+    if(dom!=='*'&&!matchField(d.getDate(),dom)) return false;
+    if(mon!=='*'&&!matchField(d.getMonth()+1,mon)) return false;
+    if(dow!=='*'&&!matchField(d.getDay(),dow)) return false;
+    return true;
+  }
+  
+  function matchField(val,spec){
+    if(spec==='*') return true;
+    if(spec.startsWith('*/')){const n=parseInt(spec.substring(2));return val%n===0;}
+    if(spec.includes(',')) return spec.split(',').map(Number).includes(val);
+    if(spec.includes('-')){const[a,b]=spec.split('-').map(Number);return val>=a&&val<=b;}
+    return val===parseInt(spec);
+  }
+  
+  let count=0;
+  let d=new Date(now.getFullYear(),now.getMonth(),now.getDate(),now.getHours(),now.getMinutes()+1,0,0);
+  let maxIter=525600; // 1 year of minutes max
+  while(count<10&&maxIter-->0){
+    if(matches(d)){
+      results.push(new Date(d));
+      count++;
+    }
+    d=new Date(d.getTime()+60000);
+  }
+  
+  const list=document.getElementById('nextList');
+  list.innerHTML=results.map(r=>{
+    const tz=Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return `<li>${r.toLocaleString('en-US',{timeZone:tz,month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',year:'numeric'})}</li>`;
+  }).join('');
+}
+
+buildExpr();
+</script>
+</body>
+</html>
