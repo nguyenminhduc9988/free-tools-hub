@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JSON to CSV Converter — Free Online Tool | ToolNest</title>
+<meta name="description" content="Convert JSON arrays to CSV format instantly. Free, private, no sign-up. Paste JSON, get CSV. Handles nested objects and arrays.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/json-to-csv.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JSON to CSV Converter — Free Online Tool">
+<meta property="og:description" content="Convert JSON arrays to CSV instantly. Free, private, no sign-up.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/json-to-csv.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JSON to CSV Converter","description":"Convert JSON arrays to CSV format instantly. Free, private, no sign-up.","url":"https://nguyenminhduc9988.github.io/free-tools-hub/json-to-csv.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc);text-decoration:none}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px}
+header{padding:30px 0 10px;text-align:center}
+header h1{font-size:2rem;font-weight:800;letter-spacing:-.5px;margin:.2em 0}
+header p{color:var(--muted);font-size:1rem}
+.nav{padding:10px 0;font-size:.85rem}
+.nav a{margin-right:16px;color:var(--muted)}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:20px 0}
+label{display:block;font-weight:600;margin-bottom:6px;font-size:.95rem}
+textarea{width:100%;min-height:180px;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.88rem;resize:vertical}
+textarea:focus{outline:none;border-color:var(--acc)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+button{cursor:pointer;border:none;border-radius:10px;padding:11px 20px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}
+button:hover{opacity:.9}
+button.sec{background:var(--line);color:var(--ink)}
+.stats{font-size:.82rem;color:var(--muted);margin-top:4px}
+.error{color:#ff6b6b;font-size:.88rem;margin-top:6px}
+footer{text-align:center;padding:30px 0;color:var(--muted);font-size:.8rem}
+.options{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0}
+.options label{display:flex;align-items:center;gap:6px;font-weight:400;font-size:.88rem}
+.options input[type=checkbox]{accent-color:var(--acc2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>🔄 JSON to CSV Converter</h1>
+<p>Convert JSON arrays to CSV format instantly. Free, private, no sign-up.</p>
+</header>
+<nav class="nav"><a href="index.html">← All Tools</a></nav>
+
+<div class="tool">
+<label for="jsonInput">Paste your JSON (array of objects)</label>
+<textarea id="jsonInput" placeholder='[
+  {"name": "Alice", "age": 30, "city": "Singapore"},
+  {"name": "Bob", "age": 25, "city": "Tokyo"},
+  {"name": "Charlie", "age": 35, "city": "London"}
+]'></textarea>
+<div class="error" id="error"></div>
+
+<div class="options">
+<label><input type="checkbox" id="optHeader" checked> Include header row</label>
+<label><input type="checkbox" id="optFlatten"> Flatten nested objects</label>
+<label><input type="text" id="optDelim" value="," placeholder="Delimiter" style="width:40px;padding:4px 8px;font-size:.85rem;border-radius:6px;border:1px solid var(--line);background:#0b0d12;color:var(--ink)"> Delimiter</label>
+</div>
+
+<div class="btns">
+<button onclick="convert()">Convert to CSV</button>
+<button class="sec" onclick="loadSample()">Load Sample</button>
+<button class="sec" onclick="clearAll()">Clear</button>
+</div>
+</div>
+
+<div class="tool">
+<label for="csvOutput">CSV Output</label>
+<textarea id="csvOutput" readonly placeholder="CSV will appear here..."></textarea>
+<div class="stats" id="stats"></div>
+<div class="btns">
+<button onclick="copyCSV()">📋 Copy to Clipboard</button>
+<button class="sec" onclick="downloadCSV()">⬇ Download .csv</button>
+</div>
+</div>
+
+<footer>© 2026 ToolNest — Free Online Tools. <a href="index.html">View all tools</a></footer>
+</div>
+
+<script>
+function escapeCSV(val, delim) {
+  if (val === null || val === undefined) return '';
+  var s = String(val);
+  if (s.indexOf(delim) > -1 || s.indexOf('"') > -1 || s.indexOf('\n') > -1) {
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+  return s;
+}
+
+function flatten(obj, prefix) {
+  var out = {};
+  for (var key in obj) {
+    if (!obj.hasOwnProperty(key)) continue;
+    var val = obj[key];
+    var newKey = prefix ? prefix + '.' + key : key;
+    if (val && typeof val === 'object' && !Array.isArray(val)) {
+      var flat = flatten(val, newKey);
+      for (var fk in flat) out[fk] = flat[fk];
+    } else if (Array.isArray(val)) {
+      out[newKey] = JSON.stringify(val);
+    } else {
+      out[newKey] = val;
+    }
+  }
+  return out;
+}
+
+function convert() {
+  var errorEl = document.getElementById('error');
+  var statsEl = document.getElementById('stats');
+  errorEl.textContent = '';
+  statsEl.textContent = '';
+
+  var input = document.getElementById('jsonInput').value.trim();
+  if (!input) { errorEl.textContent = 'Please paste JSON data.'; return; }
+
+  var data;
+  try { data = JSON.parse(input); } catch(e) { errorEl.textContent = 'Invalid JSON: ' + e.message; return; }
+
+  if (!Array.isArray(data)) {
+    if (typeof data === 'object') data = [data];
+    else { errorEl.textContent = 'JSON must be an array or object.'; return; }
+  }
+
+  var doFlatten = document.getElementById('optFlatten').checked;
+  var delim = document.getElementById('optDelim').value || ',';
+  var includeHeader = document.getElementById('optHeader').checked;
+
+  var rows = data.map(function(item) {
+    return doFlatten ? flatten(item, '') : item;
+  });
+
+  var allKeys = {};
+  rows.forEach(function(row) {
+    for (var k in row) { if (row.hasOwnProperty(k)) allKeys[k] = true; }
+  });
+  var headers = Object.keys(allKeys);
+
+  var lines = [];
+  if (includeHeader) lines.push(headers.map(function(h) { return escapeCSV(h, delim); }).join(delim));
+  rows.forEach(function(row) {
+    lines.push(headers.map(function(h) { return escapeCSV(row[h], delim); }).join(delim));
+  });
+
+  document.getElementById('csvOutput').value = lines.join('\n');
+  statsEl.textContent = rows.length + ' rows × ' + headers.length + ' columns | ' + lines.length + ' total lines | ' + document.getElementById('csvOutput').value.length + ' chars';
+}
+
+function loadSample() {
+  document.getElementById('jsonInput').value = JSON.stringify([
+    {"name": "Alice Chen", "age": 30, "city": "Singapore", "email": "alice@example.com", "department": "Engineering", "salary": 85000, "active": true},
+    {"name": "Bob Tanaka", "age": 25, "city": "Tokyo", "email": "bob@example.com", "department": "Design", "salary": 72000, "active": true},
+    {"name": "Charlie Kim", "age": 35, "city": "Seoul", "email": "charlie@example.com", "department": "Marketing", "salary": 68000, "active": false},
+    {"name": "Diana Patel", "age": 28, "city": "Mumbai", "email": "diana@example.com", "department": "Engineering", "salary": 90000, "active": true},
+    {"name": "Ethan Müller", "age": 32, "city": "Berlin", "email": "ethan@example.com", "department": "Product", "salary": 78000, "active": true}
+  ], null, 2);
+}
+
+function clearAll() {
+  document.getElementById('jsonInput').value = '';
+  document.getElementById('csvOutput').value = '';
+  document.getElementById('error').textContent = '';
+  document.getElementById('stats').textContent = '';
+}
+
+function copyCSV() {
+  var csv = document.getElementById('csvOutput').value;
+  if (!csv) return;
+  navigator.clipboard.writeText(csv).then(function() {
+    var btn = event.target;
+    btn.textContent = '✓ Copied!';
+    setTimeout(function() { btn.textContent = '📋 Copy to Clipboard'; }, 1500);
+  });
+}
+
+function downloadCSV() {
+  var csv = document.getElementById('csvOutput').value;
+  if (!csv) return;
+  var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'data.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Auto-convert on paste
+document.getElementById('jsonInput').addEventListener('paste', function() {
+  setTimeout(convert, 100);
+});
+</script>
+</body>
+</html>
