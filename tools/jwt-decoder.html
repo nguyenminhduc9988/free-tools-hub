@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWT Decoder - Decode JSON Web Tokens Online | Free Developer Tools</title>
+    <meta name="description" content="Free online JWT decoder. Decode JSON Web Tokens to view header, payload, and signature. Verify expiration, issuer, and claims. No data sent to server.">
+    <meta name="keywords" content="JWT decoder, JSON Web Token, decode JWT, JWT viewer, token decoder, online JWT tool">
+    <link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/jwt-decoder.html">
+    <meta property="og:title" content="JWT Decoder - Free Online Tool">
+    <meta property="og:description" content="Decode JSON Web Tokens instantly. View header, payload, and verify claims.">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{font-family:system-ui,-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+        .jwt-section{background:#1e293b;border-radius:12px;padding:20px;margin:12px 0;border:1px solid #334155}
+        .jwt-label{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+        .jwt-header{color:#f59e0b}
+        .jwt-payload{color:#3b82f6}
+        .jwt-sig{color:#ef4444}
+        .color-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
+        pre{white-space:pre-wrap;word-break:break-all;font-family:'Fira Code',monospace,monospace;font-size:.85rem;line-height:1.6}
+        .expired{color:#ef4444;font-weight:700}
+        .valid{color:#22c55e;font-weight:700}
+        .warning{color:#f59e0b;font-weight:700}
+        textarea{background:#0f172a;border:1px solid #334155;border-radius:8px;color:#e2e8f0;font-family:'Fira Code',monospace,monospace;font-size:.9rem;padding:12px;width:100%;resize:vertical}
+        textarea:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.2)}
+        .claim-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1e293b}
+        .claim-key{color:#94a3b8;font-size:.85rem}
+        .claim-val{color:#e2e8f0;font-size:.85rem;font-family:monospace}
+        .copy-btn{background:#334155;color:#e2e8f0;border:none;padding:4px 10px;border-radius:6px;cursor:pointer;font-size:.75rem;margin-top:8px}
+        .copy-btn:hover{background:#475569}
+        .example-btn{background:#334155;color:#94a3b8;border:1px solid #475569;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:.8rem}
+        .example-btn:hover{background:#475569;color:#e2e8f0}
+    </style>
+</head>
+<body>
+    <div class="max-w-3xl mx-auto px-4 py-8">
+        <a href="../index.html" class="text-sm text-blue-400 hover:text-blue-300">← Back to All Tools</a>
+        <h1 class="text-2xl font-bold mt-4 mb-2">🔐 JWT Decoder</h1>
+        <p class="text-gray-400 mb-6">Paste a JSON Web Token to decode its header, payload, and signature. Your token never leaves your browser.</p>
+
+        <div class="mb-4">
+            <textarea id="jwtInput" rows="4" placeholder="Paste your JWT here (eyJhbGciOiJIUzI1NiIs...)" spellcheck="false"></textarea>
+        </div>
+
+        <div class="flex gap-2 mb-6 flex-wrap">
+            <button class="example-btn" onclick="loadExample()">Load Example JWT</button>
+            <button class="example-btn" onclick="clearAll()">Clear</button>
+        </div>
+
+        <div id="error" class="hidden bg-red-900/30 border border-red-700 text-red-300 rounded-lg p-4 mb-6"></div>
+
+        <div id="result" class="hidden space-y-4">
+            <div class="flex gap-3 flex-wrap text-xs">
+                <span class="flex items-center"><span class="color-dot" style="background:#f59e0b"></span> Header</span>
+                <span class="flex items-center"><span class="color-dot" style="background:#3b82f6"></span> Payload</span>
+                <span class="flex items-center"><span class="color-dot" style="background:#ef4444"></span> Signature</span>
+            </div>
+
+            <div class="jwt-section">
+                <div class="jwt-label jwt-header">Header (Algorithm & Token Type)</div>
+                <pre id="headerJson" class="text-amber-300"></pre>
+                <button class="copy-btn" onclick="copyText('headerJson')">📋 Copy</button>
+            </div>
+
+            <div class="jwt-section">
+                <div class="jwt-label jwt-payload">Payload (Claims)</div>
+                <pre id="payloadJson" class="text-blue-300"></pre>
+                <button class="copy-btn" onclick="copyText('payloadJson')">📋 Copy</button>
+            </div>
+
+            <div class="jwt-section" id="claimsTable">
+                <div class="jwt-label jwt-payload">Claims Summary</div>
+                <div id="claims"></div>
+            </div>
+
+            <div class="jwt-section" id="verification">
+                <div class="jwt-label" style="color:#a78bfa">Status Checks</div>
+                <div id="statusChecks"></div>
+            </div>
+
+            <div class="jwt-section">
+                <div class="jwt-label jwt-sig">Signature</div>
+                <pre id="sigText" class="text-red-300" style="word-break:break-all"></pre>
+                <p class="text-gray-500 text-xs mt-2">⚠️ Signature verification requires the secret/public key. This tool only displays the signature — it cannot verify cryptographic validity without the signing key.</p>
+            </div>
+
+            <div class="jwt-section">
+                <div class="jwt-label" style="color:#22c55e">Timestamp Analysis</div>
+                <div id="timestamps"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById('jwtInput');
+        let decodeTimer;
+
+        input.addEventListener('input', () => {
+            clearTimeout(decodeTimer);
+            decodeTimer = setTimeout(decodeJWT, 150);
+        });
+
+        function b64Decode(str) {
+            // Replace URL-safe chars and add padding
+            let s = str.replace(/-/g, '+').replace(/_/g, '/');
+            while (s.length % 4 !== 0) s += '=';
+            try {
+                return decodeURIComponent(atob(s).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+            } catch {
+                return atob(s);
+            }
+        }
+
+        function decodeJWT() {
+            const token = input.value.trim();
+            const resultEl = document.getElementById('result');
+            const errorEl = document.getElementById('error');
+
+            if (!token) {
+                resultEl.classList.add('hidden');
+                errorEl.classList.add('hidden');
+                return;
+            }
+
+            const parts = token.split('.');
+            if (parts.length !== 3) {
+                errorEl.textContent = 'Invalid JWT format. A JWT must have 3 parts separated by dots (header.payload.signature).';
+                errorEl.classList.remove('hidden');
+                resultEl.classList.add('hidden');
+                return;
+            }
+
+            try {
+                const header = JSON.parse(b64Decode(parts[0]));
+                const payload = JSON.parse(b64Decode(parts[1]));
+                const signature = parts[2];
+
+                // Display header
+                document.getElementById('headerJson').textContent = JSON.stringify(header, null, 2);
+                document.getElementById('payloadJson').textContent = JSON.stringify(payload, null, 2);
+                document.getElementById('sigText').textContent = signature + '\n\n(Hex: ' + Array.from(atob(signature.replace(/-/g,'+').replace(/_/g,'='))).map(b=>b.toString(16).padStart(2,'0')).join(' ') + ')';
+
+                // Claims table
+                const claimsEl = document.getElementById('claims');
+                claimsEl.innerHTML = '';
+                const importantClaims = ['iss','sub','aud','exp','nbf','iat','jti','name','email','role','scope','azp','typ','kid','alg'];
+                for (const [key, val] of Object.entries(payload)) {
+                    const row = document.createElement('div');
+                    row.className = 'claim-row';
+                    let displayVal = val;
+                    let statusClass = '';
+                    if (typeof val === 'number' && (key === 'exp' || key === 'iat' || key === 'nbf')) {
+                        displayVal = new Date(val * 1000).toISOString() + ' (' + val + ')';
+                    }
+                    if (key === 'exp') {
+                        const isExpired = val * 1000 < Date.now();
+                        displayVal += isExpired ? ' ⚠️ EXPIRED' : ' ✅ VALID';
+                        statusClass = isExpired ? 'expired' : 'valid';
+                    }
+                    row.innerHTML = `<span class="claim-key">${key}</span><span class="claim-val ${statusClass}">${displayVal}</span>`;
+                    claimsEl.appendChild(row);
+                }
+
+                // Status checks
+                const statusEl = document.getElementById('statusChecks');
+                statusEl.innerHTML = '';
+
+                function addCheck(label, status) {
+                    const div = document.createElement('div');
+                    div.className = 'py-1';
+                    const icon = status === 'ok' ? '✅' : status === 'warn' ? '⚠️' : '❌';
+                    const cls = status === 'ok' ? 'valid' : status === 'warn' ? 'warning' : 'expired';
+                    div.innerHTML = `<span class="${cls}">${icon} ${label}</span>`;
+                    statusEl.appendChild(div);
+                }
+
+                // Check expiration
+                if (payload.exp) {
+                    const expired = payload.exp * 1000 < Date.now();
+                    addCheck(`Token ${expired ? 'EXPIRED' : 'is valid'} (exp: ${new Date(payload.exp * 1000).toLocaleString()})`, expired ? 'error' : 'ok');
+                } else {
+                    addCheck('No expiration (exp) claim — token never expires', 'warn');
+                }
+
+                // Check nbf
+                if (payload.nbf) {
+                    const active = payload.nbf * 1000 < Date.now();
+                    addCheck(`Not before: ${new Date(payload.nbf * 1000).toLocaleString()} — ${active ? 'ACTIVE' : 'NOT YET ACTIVE'}`, active ? 'ok' : 'warn');
+                }
+
+                // Check iat
+                if (payload.iat) {
+                    const age = Math.round((Date.now() - payload.iat * 1000) / 1000);
+                    const days = Math.floor(age / 86400);
+                    const hours = Math.floor((age % 86400) / 3600);
+                    const ageStr = days > 0 ? `${days}d ${hours}h ago` : `${hours}h ago`;
+                    addCheck(`Issued: ${new Date(payload.iat * 1000).toLocaleString()} (${ageStr})`, 'ok');
+                }
+
+                // Check alg
+                addCheck(`Algorithm: ${header.alg || 'N/A'}`, header.alg ? 'ok' : 'warn');
+                if (header.alg === 'none') {
+                    addCheck('⚠️ CRITICAL: Algorithm is "none" — this token has NO signature protection!', 'error');
+                }
+                if (header.alg && header.alg.startsWith('HS')) {
+                    addCheck(`HMAC with SHA-${header.alg.slice(2)} (symmetric — shared secret)`, 'ok');
+                }
+                if (header.alg && (header.alg.startsWith('RS') || header.alg.startsWith('ES'))) {
+                    addCheck(`Asymmetric algorithm (public/private key pair)`, 'ok');
+                }
+
+                // Timestamp analysis
+                const tsEl = document.getElementById('timestamps');
+                tsEl.innerHTML = '';
+                function addTs(label, ts) {
+                    const div = document.createElement('div');
+                    div.className = 'claim-row';
+                    div.innerHTML = `<span class="claim-key">${label}</span><span class="claim-val">${new Date(ts * 1000).toLocaleString()} (${new Date(ts * 1000).toUTCString()})</span>`;
+                    tsEl.appendChild(div);
+                }
+                if (payload.iat) addTs('Issued At (iat)', payload.iat);
+                if (payload.exp) addTs('Expires At (exp)', payload.exp);
+                if (payload.nbf) addTs('Not Before (nbf)', payload.nbf);
+
+                errorEl.classList.add('hidden');
+                resultEl.classList.remove('hidden');
+            } catch (e) {
+                errorEl.textContent = 'Failed to decode JWT: ' + e.message;
+                errorEl.classList.remove('hidden');
+                resultEl.classList.add('hidden');
+            }
+        }
+
+        function loadExample() {
+            const header = btoa(JSON.stringify({alg:'HS256',typ:'JWT',kid:'test-key-1'})).replace(/=/g,'');
+            const now = Math.floor(Date.now()/1000);
+            const payload = btoa(JSON.stringify({
+                sub:'1234567890',
+                name:'John Doe',
+                email:'john@example.com',
+                role:'admin',
+                iat:now,
+                exp:now + 3600,
+                iss:'https://example.com',
+                aud:'https://api.example.com'
+            })).replace(/=/g,'');
+            const sig = btoa('mock-signature-for-demo').replace(/=/g,'');
+            input.value = `${header}.${payload}.${sig}`;
+            decodeJWT();
+        }
+
+        function clearAll() {
+            input.value = '';
+            document.getElementById('result').classList.add('hidden');
+            document.getElementById('error').classList.add('hidden');
+        }
+
+        function copyText(id) {
+            const text = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => btn.textContent = '📋 Copy', 1500);
+            });
+        }
+    </script>
+
+  <!-- Ko-fi Support Button -->
+  <div style="text-align:center;margin:20px 0;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;">
+    <p style="margin:0 0 10px;color:var(--muted);font-size:.9rem;">Find these tools useful?</p>
+    <a href="https://ko-fi.com/YOUR_USERNAME" target="_blank" style="display:inline-block;">
+      <img src="https://storage.ko-fi.com/cdn/kofi2.png?v=6" alt="Buy Me a Coffee at ko-fi.com" height="36" style="border:0;">
+    </a>
+    <p style="margin:8px 0 0;color:var(--muted);font-size:.75rem;">Support keeps 63+ tools free forever. No ads, no tracking.</p>
+  </div>
+
+</body>
+</html>

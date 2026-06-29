@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Meta Tag Generator — create optimized title tags, meta descriptions, Open Graph tags, Twitter Cards, and structured data in seconds. 100% client-side.">
+  <meta name="keywords" content="meta tag generator, SEO tool, open graph generator, twitter card generator, structured data, meta tags">
+  <link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/meta-tag-generator.html">
+  <title>Meta Tag Generator — Free SEO Meta Tags Tool</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f23; color: #ccc; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    header { text-align: center; padding: 30px 20px; margin-bottom: 25px; }
+    header h1 { font-size: 1.8rem; color: #00d4ff; margin-bottom: 8px; }
+    header p { color: #888; font-size: 1rem; }
+    .badge { display: inline-block; background: #00d4ff22; color: #00d4ff; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; margin-bottom: 8px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    .panel { background: #1a1a2e; border-radius: 12px; padding: 20px; border: 1px solid #2a2a4e; }
+    .panel h2 { font-size: 1.2rem; color: #00d4ff; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #2a2a4e; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; color: #aaa; font-size: 0.85rem; margin-bottom: 5px; font-weight: 500; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px 12px; background: #0f0f23; border: 1px solid #333; border-radius: 8px; color: #fff; font-size: 0.95rem; font-family: inherit; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #00d4ff; }
+    .form-group textarea { resize: vertical; min-height: 60px; }
+    .form-group .hint { font-size: 0.75rem; color: #666; margin-top: 3px; }
+    .form-group .counter { font-size: 0.75rem; float: right; }
+    .form-group .counter.good { color: #4ade80; }
+    .form-group .counter.warn { color: #fbbf24; }
+    .form-group .counter.bad { color: #f87171; }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 8px; }
+    .checkbox-group label { display: flex; align-items: center; gap: 5px; background: #0f0f23; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; color: #aaa; border: 1px solid #333; transition: all 0.2s; }
+    .checkbox-group label:hover { border-color: #00d4ff; color: #00d4ff; }
+    .checkbox-group input[type="checkbox"] { display: none; }
+    .checkbox-group input[type="checkbox"]:checked + span { color: #00d4ff; }
+    .checkbox-group label:has(input:checked) { background: #00d4ff22; border-color: #00d4ff; color: #00d4ff; }
+    .btn-row { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+    .btn { padding: 10px 20px; border: none; border-radius: 8px; font-size: 0.95rem; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+    .btn-primary { background: #00d4ff; color: #0f0f23; }
+    .btn-primary:hover { background: #33dfff; }
+    .btn-secondary { background: #2a2a4e; color: #ccc; }
+    .btn-secondary:hover { background: #3a3a6e; }
+    .output-panel { position: relative; }
+    .output-tabs { display: flex; gap: 5px; margin-bottom: 15px; flex-wrap: wrap; }
+    .output-tab { padding: 8px 16px; background: #0f0f23; border: 1px solid #333; border-radius: 8px; color: #888; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+    .output-tab.active { background: #00d4ff22; border-color: #00d4ff; color: #00d4ff; }
+    .output-tab:hover { border-color: #00d4ff; color: #ccc; }
+    .output-code { background: #0a0a1a; border: 1px solid #2a2a4e; border-radius: 8px; padding: 15px; font-family: 'Courier New', monospace; font-size: 0.85rem; color: #4ade80; white-space: pre-wrap; word-break: break-all; max-height: 500px; overflow-y: auto; line-height: 1.6; }
+    .preview-card { background: #fff; border-radius: 8px; overflow: hidden; max-width: 500px; }
+    .preview-card img { width: 100%; height: 200px; object-fit: cover; background: #ddd; }
+    .preview-card .preview-content { padding: 12px; }
+    .preview-card .preview-domain { color: #1da1f2; font-size: 0.8rem; margin-bottom: 4px; }
+    .preview-card .preview-title { color: #1da1f2; font-size: 1rem; font-weight: 600; margin-bottom: 4px; text-decoration: none; }
+    .preview-card .preview-desc { color: #8899a6; font-size: 0.85rem; }
+    .stats-bar { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
+    .stat { background: #0f0f23; padding: 8px 15px; border-radius: 8px; font-size: 0.8rem; border: 1px solid #333; }
+    .stat .stat-val { font-weight: bold; color: #00d4ff; }
+    .stat .stat-label { color: #666; }
+    .toast { position: fixed; bottom: 20px; right: 20px; background: #4ade80; color: #0f0f23; padding: 10px 20px; border-radius: 8px; font-weight: 600; transform: translateY(100px); opacity: 0; transition: all 0.3s; z-index: 1000; }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    footer { text-align: center; padding: 20px; color: #555; font-size: 0.8rem; margin-top: 30px; }
+    footer a { color: #00d4ff; text-decoration: none; }
+    .section-divider { border: none; border-top: 1px solid #2a2a4e; margin: 15px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">🛠️ Free Tool #61</span>
+      <h1>Meta Tag Generator</h1>
+      <p>Generate optimized SEO meta tags, Open Graph, Twitter Cards &amp; structured data — instantly</p>
+    </header>
+
+    <div class="grid">
+      <div class="panel">
+        <h2>📝 Page Information</h2>
+        
+        <div class="form-group">
+          <label>Page Title</label>
+          <input type="text" id="pageTitle" placeholder="My Awesome Page — Best SEO Title" maxlength="70" oninput="update()">
+          <span class="counter" id="titleCounter">0/70</span>
+          <div class="hint">Keep under 60 characters for best SEO. Shows in search results.</div>
+        </div>
+
+        <div class="form-group">
+          <label>Meta Description</label>
+          <textarea id="metaDesc" placeholder="A compelling description that makes people click. Include your main keyword naturally." maxlength="170" oninput="update()"></textarea>
+          <span class="counter" id="descCounter">0/160</span>
+          <div class="hint">Optimal: 150-160 characters. Include a call-to-action for higher CTR.</div>
+        </div>
+
+        <div class="form-group">
+          <label>Page URL</label>
+          <input type="url" id="pageUrl" placeholder="https://example.com/my-page" oninput="update()">
+          <div class="hint">Full canonical URL of your page.</div>
+        </div>
+
+        <div class="form-group">
+          <label>Site Name</label>
+          <input type="text" id="siteName" placeholder="My Website" oninput="update()">
+        </div>
+
+        <div class="form-group">
+          <label>OG Image URL</label>
+          <input type="url" id="ogImage" placeholder="https://example.com/og-image.jpg (1200×630)" oninput="update()">
+          <div class="hint">Recommended: 1200×630px for best social sharing.</div>
+        </div>
+
+        <div class="form-group">
+          <label>Keywords (comma separated)</label>
+          <input type="text" id="keywords" placeholder="seo, meta tags, generator" oninput="update()">
+        </div>
+
+        <div class="form-group">
+          <label>Author</label>
+          <input type="text" id="author" placeholder="Your Name" oninput="update()">
+        </div>
+
+        <div class="form-group">
+          <label>Content Type</label>
+          <select id="contentType" onchange="update()">
+            <option value="article">Article</option>
+            <option value="website">Website</option>
+            <option value="blog">Blog Post</option>
+            <option value="product">Product</option>
+            <option value="profile">Profile</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="articleFields">
+          <label>Published Date</label>
+          <input type="date" id="pubDate" oninput="update()">
+        </div>
+
+        <div class="form-group">
+          <label>Robots Directives</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" id="noIndex" onchange="update()"><span>noindex</span></label>
+            <label><input type="checkbox" id="noFollow" onchange="update()"><span>nofollow</span></label>
+            <label><input type="checkbox" id="noArchive" onchange="update()"><span>noarchive</span></label>
+            <label><input type="checkbox" id="noSnippet" onchange="update()"><span>nosnippet</span></label>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="form-group">
+          <label>Twitter Card Type</label>
+          <select id="twitterCard" onchange="update()">
+            <option value="summary_large_image">summary_large_image</option>
+            <option value="summary">summary</option>
+          </select>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="update()">Generate</button>
+          <button class="btn btn-secondary" onclick="copyCode()">📋 Copy Code</button>
+          <button class="btn btn-secondary" onclick="resetForm()">🔄 Reset</button>
+        </div>
+      </div>
+
+      <div class="panel output-panel">
+        <h2>📤 Generated Output</h2>
+        
+        <div class="stats-bar">
+          <div class="stat"><span class="stat-val" id="tagCount">0</span> <span class="stat-label">tags</span></div>
+          <div class="stat"><span class="stat-val" id="seoScore">—</span> <span class="stat-label">SEO score</span></div>
+          <div class="stat"><span class="stat-val" id="codeSize">0 B</span> <span class="stat-label">size</span></div>
+        </div>
+
+        <div class="output-tabs">
+          <div class="output-tab active" onclick="showTab('all')">All Tags</div>
+          <div class="output-tab" onclick="showTab('seo')">SEO</div>
+          <div class="output-tab" onclick="showTab('og')">Open Graph</div>
+          <div class="output-tab" onclick="showTab('twitter')">Twitter</div>
+          <div class="output-tab" onclick="showTab('jsonld')">JSON-LD</div>
+          <div class="output-tab" onclick="showTab('preview')">Preview</div>
+        </div>
+
+        <div id="outputAll" class="output-code"><!-- Generated meta tags will appear here --></div>
+        <div id="outputSeo" class="output-code" style="display:none"></div>
+        <div id="outputOg" class="output-code" style="display:none"></div>
+        <div id="outputTwitter" class="output-code" style="display:none"></div>
+        <div id="outputJsonld" class="output-code" style="display:none"></div>
+        <div id="outputPreview" style="display:none">
+          <div style="margin-bottom: 15px;">
+            <div style="color: #aaa; font-size: 0.85rem; margin-bottom: 8px;">🔍 Google Preview</div>
+            <div style="background: #fff; padding: 15px; border-radius: 8px; max-width: 500px;">
+              <div style="color: #202124; font-size: 1.1rem; margin-bottom: 4px; cursor: pointer;" id="googleTitle">Your Page Title</div>
+              <div style="color: #4d5156; font-size: 0.85rem; margin-bottom: 4px;" id="googleUrl">https://example.com</div>
+              <div style="color: #4d5156; font-size: 0.85rem;" id="googleDesc">Your meta description will appear here. Make it compelling!</div>
+            </div>
+          </div>
+          <div>
+            <div style="color: #aaa; font-size: 0.85rem; margin-bottom: 8px;">🐦 Twitter Preview</div>
+            <div class="preview-card">
+              <img id="previewImg" src="https://placehold.co/500/200/1a1a2e/00d4ff?text=OG+Image" alt="Preview">
+              <div class="preview-content">
+                <div class="preview-domain" id="previewDomain">example.com</div>
+                <a class="preview-title" id="previewTitle" href="#">Your Page Title</a>
+                <div class="preview-desc" id="previewDesc">Your meta description will appear here.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  <!-- Ko-fi Support Button -->
+  <div style="text-align:center;margin:20px 0;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;">
+    <p style="margin:0 0 10px;color:var(--muted);font-size:.9rem;">Find these tools useful?</p>
+    <a href="https://ko-fi.com/YOUR_USERNAME" target="_blank" style="display:inline-block;">
+      <img src="https://storage.ko-fi.com/cdn/kofi2.png?v=6" alt="Buy Me a Coffee at ko-fi.com" height="36" style="border:0;">
+    </a>
+    <p style="margin:8px 0 0;color:var(--muted);font-size:.75rem;">Support keeps 63+ tools free forever. No ads, no tracking.</p>
+  </div>
+
+<footer>
+      <p>Free Meta Tag Generator — 100% client-side, no data sent anywhere. <a href="../index.html">← Back to all tools</a></p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script>
+    function update() {
+      const title = document.getElementById('pageTitle').value.trim();
+      const desc = document.getElementById('metaDesc').value.trim();
+      const url = document.getElementById('pageUrl').value.trim();
+      const site = document.getElementById('siteName').value.trim();
+      const img = document.getElementById('ogImage').value.trim();
+      const kw = document.getElementById('keywords').value.trim();
+      const auth = document.getElementById('author').value.trim();
+      const type = document.getElementById('contentType').value;
+      const card = document.getElementById('twitterCard').value;
+      const pubDate = document.getElementById('pubDate').value;
+
+      // Counters
+      const tc = document.getElementById('titleCounter');
+      tc.textContent = `${title.length}/70`;
+      tc.className = 'counter ' + (title.length <= 60 ? 'good' : title.length <= 70 ? 'warn' : 'bad');
+
+      const dc = document.getElementById('descCounter');
+      dc.textContent = `${desc.length}/160`;
+      dc.className = 'counter ' + (desc.length <= 160 ? 'good' : desc.length <= 170 ? 'warn' : 'bad');
+
+      // Article fields visibility
+      document.getElementById('articleFields').style.display = (type === 'article' || type === 'blog') ? 'block' : 'none';
+
+      // Build tags
+      let seoTags = [];
+      let ogTags = [];
+      let twTags = [];
+      let jsonld = '';
+      let allTags = [];
+
+      // Basic SEO
+      if (title) {
+        allTags.push(`<title>${esc(title)}</title>`);
+        seoTags.push(`<title>${esc(title)}</title>`);
+      }
+      if (desc) {
+        allTags.push(`<meta name="description" content="${esc(desc)}">`);
+        seoTags.push(`<meta name="description" content="${esc(desc)}">`);
+      }
+      if (kw) {
+        allTags.push(`<meta name="keywords" content="${esc(kw)}">`);
+        seoTags.push(`<meta name="keywords" content="${esc(kw)}">`);
+      }
+      if (auth) {
+        allTags.push(`<meta name="author" content="${esc(auth)}">`);
+        seoTags.push(`<meta name="author" content="${esc(auth)}">`);
+      }
+      if (url) {
+        allTags.push(`<link rel="canonical" href="${esc(url)}">`);
+        seoTags.push(`<link rel="canonical" href="${esc(url)}">`);
+      }
+
+      // Robots
+      const robots = [];
+      if (document.getElementById('noIndex').checked) robots.push('noindex');
+      if (document.getElementById('noFollow').checked) robots.push('nofollow');
+      if (document.getElementById('noArchive').checked) robots.push('noarchive');
+      if (document.getElementById('noSnippet').checked) robots.push('nosnippet');
+      if (robots.length > 0) {
+        const rt = `<meta name="robots" content="${robots.join(', ')}">`;
+        allTags.push(rt);
+        seoTags.push(rt);
+      }
+
+      // Open Graph
+      if (title) {
+        const t = `<meta property="og:title" content="${esc(title)}">`;
+        allTags.push(t);
+        ogTags.push(t);
+      }
+      if (desc) {
+        const t = `<meta property="og:description" content="${esc(desc)}">`;
+        allTags.push(t);
+        ogTags.push(t);
+      }
+      if (url) {
+        const t = `<meta property="og:url" content="${esc(url)}">`;
+        allTags.push(t);
+        ogTags.push(t);
+      }
+      if (img) {
+        const t = `<meta property="og:image" content="${esc(img)}">`;
+        allTags.push(t);
+        ogTags.push(t);
+      }
+      const ogType = type === 'article' ? 'article' : type === 'blog' ? 'article' : type === 'product' ? 'product' : 'website';
+      {
+        const t = `<meta property="og:type" content="${ogType}">`;
+        allTags.push(t);
+        ogTags.push(t);
+      }
+      if (site) {
+        const t = `<meta property="og:site_name" content="${esc(site)}">`;
+        allTags.push(t);
+        ogTags.push(t);
+      }
+      if (pubDate && (type === 'article' || type === 'blog')) {
+        const t = `<meta property="article:published_time" content="${pubDate}">`;
+        allTags.push(t);
+        ogTags.push(t);
+      }
+
+      // Twitter
+      {
+        const t = `<meta name="twitter:card" content="${card}">`;
+        allTags.push(t);
+        twTags.push(t);
+      }
+      if (title) {
+        const t = `<meta name="twitter:title" content="${esc(title)}">`;
+        allTags.push(t);
+        twTags.push(t);
+      }
+      if (desc) {
+        const t = `<meta name="twitter:description" content="${esc(desc)}">`;
+        allTags.push(t);
+        twTags.push(t);
+      }
+      if (img) {
+        const t = `<meta name="twitter:image" content="${esc(img)}">`;
+        allTags.push(t);
+        twTags.push(t);
+      }
+
+      // JSON-LD
+      if (title && url) {
+        const schemaType = type === 'article' || type === 'blog' ? 'Article' : type === 'product' ? 'Product' : 'WebPage';
+        const schema = {
+          "@context": "https://schema.org",
+          "@type": schemaType,
+          "headline": title,
+          "url": url
+        };
+        if (desc) schema.description = desc;
+        if (img) schema.image = img;
+        if (auth) schema.author = { "@type": "Person", "name": auth };
+        if (site) schema.publisher = { "@type": "Organization", "name": site };
+        if (pubDate && (type === 'article' || type === 'blog')) schema.datePublished = pubDate;
+        jsonld = '<script type="application/ld+json">\n' + JSON.stringify(schema, null, 2) + '\n<\/script>';
+      }
+
+      // Stats
+      const tagCount = allTags.length + (jsonld ? 1 : 0);
+      document.getElementById('tagCount').textContent = tagCount;
+      
+      const code = allTags.join('\n') + (jsonld ? '\n' + jsonld : '');
+      const bytes = new Blob([code]).size;
+      document.getElementById('codeSize').textContent = bytes < 1024 ? bytes + ' B' : (bytes / 1024).toFixed(1) + ' KB';
+
+      // SEO Score
+      let score = 0;
+      if (title && title.length >= 30 && title.length <= 60) score += 25;
+      else if (title) score += 10;
+      if (desc && desc.length >= 120 && desc.length <= 160) score += 25;
+      else if (desc) score += 10;
+      if (url) score += 15;
+      if (img) score += 15;
+      if (kw) score += 10;
+      if (jsonld) score += 10;
+      document.getElementById('seoScore').textContent = score + '/100';
+      document.getElementById('seoScore').style.color = score >= 80 ? '#4ade80' : score >= 50 ? '#fbbf24' : '#f87171';
+
+      // Update output panels
+      document.getElementById('outputAll').textContent = code || '<!-- Fill in the form to generate meta tags -->';
+      document.getElementById('outputSeo').textContent = seoTags.join('\n') || '<!-- Fill in title, description, etc. -->';
+      document.getElementById('outputOg').textContent = ogTags.join('\n') || '<!-- Fill in form fields for OG tags -->';
+      document.getElementById('outputTwitter').textContent = twTags.join('\n') || '<!-- Fill in form fields for Twitter tags -->';
+      document.getElementById('outputJsonld').textContent = jsonld || '<!-- Need at least title + URL for structured data -->';
+
+      // Preview
+      try {
+        const domain = url ? new URL(url).hostname : 'example.com';
+        document.getElementById('googleTitle').textContent = title || 'Your Page Title';
+        document.getElementById('googleUrl').textContent = url || 'https://example.com';
+        document.getElementById('googleDesc').textContent = desc || 'Your meta description will appear here. Make it compelling!';
+        document.getElementById('previewDomain').textContent = domain;
+        document.getElementById('previewTitle').textContent = title || 'Your Page Title';
+        document.getElementById('previewDesc').textContent = desc || 'Your meta description will appear here.';
+        if (img) document.getElementById('previewImg').src = img;
+      } catch(e) {}
+    }
+
+    function esc(s) {
+      return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function showTab(tab) {
+      document.querySelectorAll('.output-tab').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+      ['All', 'Seo', 'Og', 'Twitter', 'Jsonld', 'Preview'].forEach(t => {
+        document.getElementById('output' + t).style.display = 'none';
+      });
+      document.getElementById('output' + tab.charAt(0).toUpperCase() + tab.slice(1)).style.display = tab === 'preview' ? 'block' : 'block';
+      // Show correct panel
+      document.getElementById('outputAll').style.display = tab === 'all' ? 'block' : 'none';
+      document.getElementById('outputSeo').style.display = tab === 'seo' ? 'block' : 'none';
+      document.getElementById('outputOg').style.display = tab === 'og' ? 'block' : 'none';
+      document.getElementById('outputTwitter').style.display = tab === 'twitter' ? 'block' : 'none';
+      document.getElementById('outputJsonld').style.display = tab === 'jsonld' ? 'block' : 'none';
+      document.getElementById('outputPreview').style.display = tab === 'preview' ? 'block' : 'none';
+    }
+
+    function copyCode() {
+      const code = document.getElementById('outputAll').textContent;
+      if (!code || code.includes('Fill in')) {
+        showToast('⚠️ Generate tags first!');
+        return;
+      }
+      navigator.clipboard.writeText(code).then(() => showToast('✅ Copied to clipboard!'));
+    }
+
+    function resetForm() {
+      document.querySelectorAll('input[type="text"], input[type="url"], input[type="date"], textarea').forEach(el => el.value = '');
+      document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+      document.getElementById('contentType').selectedIndex = 0;
+      document.getElementById('twitterCard').selectedIndex = 0;
+      update();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    // Initialize
+    update();
+  </script>
+</body>
+</html>

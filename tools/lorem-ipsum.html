@@ -132,6 +132,16 @@ var W="lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tem
 function sen(){var n=6+Math.floor(Math.random()*8);var s=[];for(var i=0;i<n;i++)s.push(W[Math.floor(Math.random()*W.length)]);var x=s.join(' ');return x.charAt(0).toUpperCase()+x.slice(1)+'.';}
 function gen(){var n=parseInt($('n').value)||3;var out=[];for(var i=0;i<n;i++){var s=[];for(var j=0;j<4;j++)s.push(sen());out.push(s.join(' '));}$('res').value=out.join('\n\n');}
 </script>
+
+  <!-- Ko-fi Support Button -->
+  <div style="text-align:center;margin:20px 0;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;">
+    <p style="margin:0 0 10px;color:var(--muted);font-size:.9rem;">Find these tools useful?</p>
+    <a href="https://ko-fi.com/YOUR_USERNAME" target="_blank" style="display:inline-block;">
+      <img src="https://storage.ko-fi.com/cdn/kofi2.png?v=6" alt="Buy Me a Coffee at ko-fi.com" height="36" style="border:0;">
+    </a>
+    <p style="margin:8px 0 0;color:var(--muted);font-size:.75rem;">Support keeps 63+ tools free forever. No ads, no tracking.</p>
+  </div>
+
 <footer><div class="wrap">
 <p>© 2026 ToolNest. Free online tools — fast, private, no signup.</p>
 <p>Tools run entirely in your browser. Your data never leaves your device.</p>

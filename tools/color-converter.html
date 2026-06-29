@@ -135,6 +135,16 @@ function hexToRgb(h){h=h.replace('#','');if(h.length===3)h=h.split('').map(funct
 function rgbToHsl(r,g,b){r/=255;g/=255;b/=255;var mx=Math.max(r,g,b),mn=Math.min(r,g,b),h,s,l=(mx+mn)/2;if(mx===mn){h=s=0;}else{var d=mx-mn;s=l>0.5?d/(2-mx-mn):d/(mx+mn);switch(mx){case r:h=(g-b)/d+(g<b?6:0);break;case g:h=(b-r)/d+2;break;default:h=(r-g)/d+4;}h/=6;}return [Math.round(h*360),Math.round(s*100),Math.round(l*100)];}
 function upd(v){var m=v.match(/#?([0-9a-f]{6}|[0-9a-f]{3})/i);var rgb;if(m){rgb=hexToRgb(m[0]);}else{var p=v.match(/\d+/g);if(p&&p.length>=3)rgb=[+p[0],+p[1],+p[2]];else return;}var hsl=rgbToHsl(rgb[0],rgb[1],rgb[2]);$('hex').value='#'+rgb.map(function(x){return x.toString(16).padStart(2,'0')}).join('');$('rgb').value='rgb('+rgb.join(', ')+')';$('hsl').value='hsl('+hsl[0]+', '+hsl[1]+'%, '+hsl[2]+'%)';$('sw').style.background=$('hex').value;$('cp').style.color=$('hex').value;}
 </script>
+
+  <!-- Ko-fi Support Button -->
+  <div style="text-align:center;margin:20px 0;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;">
+    <p style="margin:0 0 10px;color:var(--muted);font-size:.9rem;">Find these tools useful?</p>
+    <a href="https://ko-fi.com/YOUR_USERNAME" target="_blank" style="display:inline-block;">
+      <img src="https://storage.ko-fi.com/cdn/kofi2.png?v=6" alt="Buy Me a Coffee at ko-fi.com" height="36" style="border:0;">
+    </a>
+    <p style="margin:8px 0 0;color:var(--muted);font-size:.75rem;">Support keeps 63+ tools free forever. No ads, no tracking.</p>
+  </div>
+
 <footer><div class="wrap">
 <p>© 2026 ToolNest. Free online tools — fast, private, no signup.</p>
 <p>Tools run entirely in your browser. Your data never leaves your device.</p>

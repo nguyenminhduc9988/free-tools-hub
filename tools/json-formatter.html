@@ -1,147 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JSON Formatter &amp; Validator — Free Online Tool | ToolNest</title>
-<meta name="description" content="Beautify, minify and validate JSON instantly in your browser.">
-<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/json-formatter">
-<meta name="keywords" content="json formatter, json validator, beautify json, json pretty print">
-<meta name="google-site-verification" content="REPLACE_WITH_YOUR_GSC_CODE">
-<script async defer data-website-id="free-tools-hub" src="https://analytics.lsouls.com/script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>JSON Formatter & Validator — Free Online Tool | Free Tools Hub</title>
+<meta name="description" content="Free online JSON formatter, validator, and beautifier. Minify, prettify, and validate JSON instantly. No data sent to servers — 100% client-side.">
+<meta name="google-adsense-account" content="ca-pub-1432831545676654">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/json-formatter.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="JSON Formatter &amp; Validator — Free Online Tool | ToolNest">
-<meta property="og:description" content="Beautify, minify and validate JSON instantly in your browser.">
-<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/json-formatter">
-<meta name="theme-color" content="#0f1115">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON Formatter & Validator \u2014 Free Online Tool | ToolNest", "description": "Beautify, minify and validate JSON instantly in your browser.", "url": "https://nguyenminhduc9988.github.io/free-tools-hub/tools/json-formatter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<meta property="og:title" content="JSON Formatter & Validator — Free Online Tool">
+<meta property="og:description" content="Format, validate, minify, and beautify JSON instantly. 100% client-side — your data never leaves your browser.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/json-formatter.html">
+<meta property="og:site_name" content="Free Tools Hub">
+<meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=630&fit=crop">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f172a'/%3E%3Cpath d='M8 10l4 6-4 6' stroke='%233b82f6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cline x1='16' y1='22' x2='24' y2='22' stroke='%233b82f6' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1432831545676654" crossorigin="anonymous"></script>
 <style>
-:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-a{color:var(--acc);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:980px;margin:0 auto;padding:0 18px}
-header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
-.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}
-.logo span{color:var(--acc2)}
-.nav a.lnk{color:var(--muted);font-size:.92rem}
-.nav a.lnk:hover{color:var(--ink);text-decoration:none}
-.search{flex:1;max-width:340px}
-.search input{width:100%;padding:9px 13px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:.92rem}
-.search input:focus{outline:none;border-color:var(--acc)}
-.hero{padding:46px 0 22px;text-align:center}
-.hero h1{font-size:2.4rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}
-.hero p{color:var(--muted);font-size:1.05rem;max-width:620px;margin:6px auto 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:26px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;transition:.15s}
-.card:hover{border-color:var(--acc);transform:translateY(-2px)}
-.card h3{margin:0 0 4px;font-size:1.05rem}
-.card p{margin:0;color:var(--muted);font-size:.85rem}
-.card .ic{font-size:1.5rem}
-section.body{padding:14px 0 50px}
-.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}
-textarea,input[type=text]{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.92px;font-size:.9rem}
-textarea{min-height:150px;resize:vertical}
-textarea:focus,input:focus{outline:none;border-color:var(--acc)}
-.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-button{cursor:pointer;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}
-button:hover{filter:brightness(1.08)}
-button.sec{background:var(--card);color:var(--ink);border:1px solid var(--line)}
-.out{margin-top:14px}
-.msg{margin-top:10px;padding:10px 13px;border-radius:10px;font-size:.9rem}
-.msg.ok{background:rgba(34,211,166,.12);color:var(--ok);border:1px solid rgba(34,211,166,.3)}
-.msg.err{background:rgba(255,107,107,.12);color:var(--err);border:1px solid rgba(255,107,107,.3)}
-.label{display:block;font-size:.8rem;color:var(--muted);margin:10px 0 5px;text-transform:uppercase;letter-spacing:.5px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:640px){.row2{grid-template-columns:1fr}.hero h1{font-size:1.9rem}}
-.seo{color:var(--muted);font-size:.95rem;margin-top:30px}
-.seo h2{color:var(--ink);font-size:1.2rem;margin:1.2em 0 .3em}
-.seo p{margin:.5em 0}
-footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
-.ad-slot{display:flex;align-items:center;justify-content:center;margin:18px 0;min-height:90px;background:var(--card);border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.8rem}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.tags a{font-size:.75rem;background:#0b0d12;border:1px solid var(--line);border-radius:20px;padding:3px 10px;color:var(--muted)}
-.crumbs{font-size:.82rem;color:var(--muted);margin:8px 0}
-.crumbs a{color:var(--muted)}
+:root{--bg:#0f172a;--surface:#1e293b;--surface2:#334155;--border:#334155;--accent:#3b82f6;--accent2:#8b5cf6;--green:#22c55e;--red:#ef4444;--yellow:#f59e0b;--text:#f1f5f9;--text2:#94a3b8;--mono:'JetBrains Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+.nav{position:sticky;top:0;z-index:100;background:rgba(15,23,42,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-size:1.05rem;font-weight:700;color:var(--text);display:flex;align-items:center;gap:0.5rem}
+.nav-logo svg{width:22px;height:22px}
+.nav-back{font-size:0.8rem;color:var(--text2);display:flex;align-items:center;gap:0.35rem}
+.nav-back:hover{color:var(--accent)}
+
+.container{max-width:1200px;margin:0 auto;padding:2rem 1.5rem}
+
+.hero{text-align:center;margin-bottom:2rem}
+.hero h1{font-size:2rem;font-weight:700;margin-bottom:0.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--text2);max-width:600px;margin:0 auto}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;justify-content:center}
+.toolbar button{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.5rem 1rem;color:var(--text);font-size:0.85rem;font-family:inherit;font-weight:500;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:0.4rem}
+.toolbar button:hover{border-color:var(--accent);background:var(--surface2)}
+.toolbar button.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
+.toolbar button.primary:hover{opacity:0.9}
+
+.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+@media(max-width:768px){.editor-grid{grid-template-columns:1fr}}
+
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.panel-header{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:var(--bg);border-bottom:1px solid var(--border);font-size:0.85rem;font-weight:600}
+.panel-header .dots{display:flex;gap:6px}
+.panel-header .dot{width:10px;height:10px;border-radius:50%}
+.panel-header .dot:nth-child(1){background:var(--red)}
+.panel-header .dot:nth-child(2){background:var(--yellow)}
+.panel-header .dot:nth-child(3){background:var(--green)}
+.panel-actions{display:flex;gap:0.5rem}
+.panel-actions button{background:none;border:none;color:var(--text2);cursor:pointer;font-size:0.8rem;font-family:inherit;padding:0.2rem 0.5rem;border-radius:4px;transition:all 0.2s}
+.panel-actions button:hover{color:var(--accent);background:rgba(59,130,246,0.1)}
+textarea{width:100%;min-height:400px;padding:1rem;background:transparent;color:var(--text);font-family:var(--mono);font-size:0.85rem;line-height:1.6;border:none;resize:vertical;outline:none;tab-size:2}
+textarea::placeholder{color:var(--text2)}
+.output-area{overflow:auto;max-height:500px;padding:1rem;font-family:var(--mono);font-size:0.85rem;line-height:1.6;white-space:pre-wrap;word-break:break-all}
+.output-area .key{color:var(--accent)}
+.output-area .string{color:var(--green)}
+.output-area .number{color:var(--yellow)}
+.output-area .boolean{color:var(--accent2)}
+.output-area .null{color:var(--red)}
+.output-area .brace{color:var(--text2)}
+
+.status-bar{display:flex;flex-wrap:wrap;gap:1rem;padding:0.75rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:1.5rem;align-items:center;font-size:0.85rem}
+.status-item{display:flex;align-items:center;gap:0.35rem}
+.status-item .label{color:var(--text2)}
+.status-item .value{font-family:var(--mono);font-weight:500;color:var(--text)}
+.status-item .value.valid{color:var(--green)}
+.status-item .value.invalid{color:var(--red)}
+
+.error-box{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:10px;padding:1rem;margin-bottom:1.5rem;font-family:var(--mono);font-size:0.85rem;color:var(--red);display:none}
+.error-box.visible{display:block}
+
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:2rem 0}
+.feature{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem;text-align:center}
+.feature .icon{font-size:1.5rem;margin-bottom:0.5rem}
+.feature h3{font-size:0.95rem;font-weight:600;margin-bottom:0.35rem}
+.feature p{font-size:0.8rem;color:var(--text2);line-height:1.5}
+
+.footer{text-align:center;padding:2rem 1.5rem;color:var(--text2);font-size:0.8rem;border-top:1px solid var(--border);margin-top:2rem}
+.footer a{color:var(--accent)}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap nav">
-<a class="logo" href="/free-tools-hub/">ToolNest<span>.</span></a>
-<div class="search"><input id="q" type="text" placeholder="Search tools…" oninput="filt()"></div>
-<a class="lnk" href="/free-tools-hub/about">About</a>
-</div></header>
+<nav class="nav">
+<div class="nav-inner">
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/" class="nav-logo">
+<svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#0f172a"/><path d="M8 10l4 6-4 6" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><line x1="16" y1="22" x2="24" y2="22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/></svg>
+Free Tools Hub
+</a>
+<a href="https://nguyenminhduc9988.github.io/free-tools-hub/" class="nav-back">← All Tools</a>
+</div>
+</nav>
 
-
-<div class="wrap">
-<div class="crumbs"><a href="/free-tools-hub/">Home</a> › JSON Formatter &amp; Validator</div>
-<div class="hero" style="text-align:left;padding:24px 0 8px">
-<h1 style="font-size:1.9rem">JSON Formatter &amp; Validator</h1>
-<p>Beautify, minify and validate JSON instantly in your browser.</p>
-<div class="tags"><a href="/free-tools-hub/tools/json-formatter">#jsonformatter</a><a href="/free-tools-hub/tools/json-formatter">#jsonvalidator</a><a href="/free-tools-hub/tools/json-formatter">#beautifyjson</a><a href="/free-tools-hub/tools/json-formatter">#jsonprettyprint</a></div>
+<div class="container">
+<div class="hero">
+<h1>JSON Formatter & Validator</h1>
+<p>Format, validate, minify, and beautify JSON instantly. Your data never leaves your browser — 100% client-side processing.</p>
 </div>
 
-<div class="ad-slot" data-ad="banner">
-  <!-- Adsterra / AdSense banner — replace with real zone ID -->
-  <script type="text/javascript">
-    atOptions = {
-      'key' : '5392577',
-      'format' : 'iframe',
-      'height' : 90,
-      'width' : 728,
-      'params' : {}
-    };
-  </script>
+<div class="toolbar">
+<button class="primary" onclick="formatJSON()">✨ Format / Beautify</button>
+<button onclick="minifyJSON()">📦 Minify</button>
+<button onclick="validateJSON()">✅ Validate</button>
+<button onclick="copyOutput()">📋 Copy Output</button>
+<button onclick="clearAll()">🗑️ Clear</button>
+<button onclick="loadSample()">📄 Load Sample</button>
+<button onclick="sortKeys()">🔤 Sort Keys</button>
+<button onclick="escapeJSON()">🔒 Escape</button>
+<button onclick="unescapeJSON()">🔓 Unescape</button>
 </div>
 
-
-<div class="tool">
-
-<textarea id="in" placeholder='Paste JSON here, e.g. {"name":"ToolNest","tools":[1,2,3]}'></textarea>
-<div class="btns"><button onclick="fmt()">Format / Validate</button></div>
-<div class="out" id="out"></div>
-
+<div class="status-bar">
+<div class="status-item"><span class="label">Status:</span><span class="value" id="statusText">Ready</span></div>
+<div class="status-item"><span class="label">Size:</span><span class="value" id="sizeText">0 bytes</span></div>
+<div class="status-item"><span class="label">Lines:</span><span class="value" id="linesText">0</span></div>
+<div class="status-item"><span class="label">Depth:</span><span class="value" id="depthText">0</span></div>
+<div class="status-item"><span class="label">Keys:</span><span class="value" id="keysText">0</span></div>
 </div>
 
-<div class="ad-slot" data-ad="banner">
-  <!-- Adsterra / AdSense banner — replace with real zone ID -->
-  <script type="text/javascript">
-    atOptions = {
-      'key' : '5392577',
-      'format' : 'iframe',
-      'height' : 90,
-      'width' : 728,
-      'params' : {}
-    };
-  </script>
+<div class="error-box" id="errorBox"></div>
+
+<div class="editor-grid">
+<div class="panel">
+<div class="panel-header">
+<div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<span>Input JSON</span>
+<div class="panel-actions">
+<button onclick="pasteFromClipboard()">Paste</button>
+<button onclick="clearInput()">Clear</button>
+</div>
+</div>
+<textarea id="inputArea" placeholder='Paste your JSON here...
+
+{
+  "name": "example",
+  "version": "1.0.0",
+  "tools": ["format", "validate", "minify"]
+}' oninput="updateStats()" spellcheck="false"></textarea>
 </div>
 
+<div class="panel">
+<div class="panel-header">
+<div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<span>Output</span>
+<div class="panel-actions">
+<button onclick="copyOutput()">Copy</button>
+<button onclick="downloadOutput()">Download</button>
+</div>
+</div>
+<div class="output-area" id="outputArea"><span class="brace">// Formatted JSON will appear here</span></div>
+</div>
+</div>
 
-<div class="seo">
-<h2>About the JSON Formatter &amp; Validator</h2>
-<p>Format, validate, minify and pretty-print JSON data instantly. 100% client-side, your data never leaves your browser. Paste any JSON to validate it, find syntax errors with line hints, and convert between minified and pretty-printed formats.</p>
+<div class="features">
+<div class="feature">
+<div class="icon">🚀</div>
+<h3>Instant Processing</h3>
+<p>Format and validate JSON in real-time as you type</p>
 </div>
-<h2 style="margin-top:30px;font-size:1.1rem">More tools</h2>
-<div class="grid"><a class="card" data-tool data-search="Base64 Encode &amp; Decode" href="/free-tools-hub/tools/base64"><h3>Base64 Encode &amp; Decode</h3></a><a class="card" data-tool data-search="URL Encoder &amp; Decoder" href="/free-tools-hub/tools/url-encoder"><h3>URL Encoder &amp; Decoder</h3></a><a class="card" data-tool data-search="Word &amp; Character Counter" href="/free-tools-hub/tools/word-counter"><h3>Word &amp; Character Counter</h3></a><a class="card" data-tool data-search="Strong Password Generator" href="/free-tools-hub/tools/password-generator"><h3>Strong Password Generator</h3></a><a class="card" data-tool data-search="HEX / RGB / HSL Color Converter" href="/free-tools-hub/tools/color-converter"><h3>HEX / RGB / HSL Color Converter</h3></a><a class="card" data-tool data-search="Case Converter" href="/free-tools-hub/tools/case-converter"><h3>Case Converter</h3></a><a class="card" data-tool data-search="Lorem Ipsum Generator" href="/free-tools-hub/tools/lorem-ipsum"><h3>Lorem Ipsum Generator</h3></a><a class="card" data-tool data-search="MD5 / SHA Hash Generator" href="/free-tools-hub/tools/hash-generator"><h3>MD5 / SHA Hash Generator</h3></a><a class="card" data-tool data-search="Text Diff Checker" href="/free-tools-hub/tools/text-diff"><h3>Text Diff Checker</h3></a><a class="card" data-tool data-search="QR Code Generator" href="/free-tools-hub/tools/qr-generator"><h3>QR Code Generator</h3></a><a class="card" data-tool data-search="Unit Converter" href="/free-tools-hub/tools/unit-converter"><h3>Unit Converter</h3></a></div>
+<div class="feature">
+<div class="icon">🔒</div>
+<h3>100% Private</h3>
+<p>All processing happens in your browser — no data sent to servers</p>
 </div>
+<div class="feature">
+<div class="icon">🎨</div>
+<h3>Syntax Highlighting</h3>
+<p>Color-coded output for keys, strings, numbers, booleans</p>
+</div>
+<div class="feature">
+<div class="icon">📊</div>
+<h3>Detailed Stats</h3>
+<p>Size, line count, depth, and key count displayed live</p>
+</div>
+<div class="feature">
+<div class="icon">📦</div>
+<h3>Minify & Beautify</h3>
+<p>Toggle between minified and pretty-printed formats</p>
+</div>
+<div class="feature">
+<div class="icon">🔤</div>
+<h3>Key Sorting</h3>
+<p>Alphabetically sort all object keys for consistent output</p>
+</div>
+</div>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1432831545676654" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
+<footer class="footer">
+<p>© 2026 <a href="https://nguyenminhduc9988.github.io/free-tools-hub/">Free Tools Hub</a> — 60+ free online tools for developers. No signup, no tracking.</p>
+</footer>
+
 <script>
-function $(id){return document.getElementById(id)}
-function show(cls,txt){var o=$('out');o.innerHTML='<div class="msg '+cls+'">'+txt+'</div>'}
-function fmt(){
-  var v=$('in').value; if(!v.trim())return show('err','Paste some JSON first.');
-  try{var p=JSON.parse(v);$('out').innerHTML='<textarea id="res">'+JSON.stringify(p,null,2)+'</textarea><div class="btns"><button class="sec" onclick="copyRes()">Copy</button><button class="sec" onclick="minify()">Minify</button></div><div class="msg ok">Valid JSON ✓ ('+JSON.stringify(p).length+' bytes minified)</div>';}
-  catch(e){show('err','Invalid JSON: '+e.message);}
+const inputArea = document.getElementById('inputArea');
+const outputArea = document.getElementById('outputArea');
+const errorBox = document.getElementById('errorBox');
+const statusText = document.getElementById('statusText');
+const sizeText = document.getElementById('sizeText');
+const linesText = document.getElementById('linesText');
+const depthText = document.getElementById('depthText');
+const keysText = document.getElementById('keysText');
+
+function getJSON() {
+  const val = inputArea.value.trim();
+  if (!val) return null;
+  try { return JSON.parse(val); } catch(e) { return undefined; }
 }
-function minify(){var v=$('in').value;try{var p=JSON.parse(v);$('res').value=JSON.stringify(p);}catch(e){show('err','Invalid JSON: '+e.message);}}
-function copyRes(){$('res').select();document.execCommand('copy');}
+
+function setOutput(text, highlighted) {
+  if (highlighted) {
+    outputArea.innerHTML = highlighted;
+  } else {
+    outputArea.textContent = text;
+  }
+}
+
+function highlightJSON(json) {
+  const formatted = JSON.stringify(json, null, 2);
+  return formatted
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"([^"]+)"(?=\s*:)/g, '<span class="key">"$1"</span>')
+    .replace(/:\s*"([^"]*?)"/g, ': <span class="string">"$1"</span>')
+    .replace(/:\s*(-?\d+\.?\d*([eE][+-]?\d+)?)/g, ': <span class="number">$1</span>')
+    .replace(/:\s*(true|false)/g, ': <span class="boolean">$1</span>')
+    .replace(/:\s*(null)/g, ': <span class="null">$1</span>')
+    .replace(/([{}\[\]])/g, '<span class="brace">$1</span>');
+}
+
+function countKeys(obj) {
+  let count = 0;
+  if (obj && typeof obj === 'object') {
+    if (Array.isArray(obj)) {
+      obj.forEach(item => count += countKeys(item));
+    } else {
+      const keys = Object.keys(obj);
+      count += keys.length;
+      keys.forEach(k => count += countKeys(obj[k]));
+    }
+  }
+  return count;
+}
+
+function getDepth(obj) {
+  if (!obj || typeof obj !== 'object') return 0;
+  if (Array.isArray(obj)) return obj.length === 0 ? 1 : 1 + Math.max(...obj.map(getDepth));
+  const vals = Object.values(obj);
+  return vals.length === 0 ? 1 : 1 + Math.max(...vals.map(getDepth));
+}
+
+function updateStats() {
+  const val = inputArea.value;
+  const bytes = new Blob([val]).size;
+  const lines = val ? val.split('\n').length : 0;
+  sizeText.textContent = bytes > 1024 ? (bytes/1024).toFixed(1) + ' KB' : bytes + ' bytes';
+  linesText.textContent = lines;
+
+  const parsed = getJSON();
+  if (parsed === undefined) {
+    statusText.textContent = 'Invalid JSON';
+    statusText.className = 'value invalid';
+    depthText.textContent = '-';
+    keysText.textContent = '-';
+  } else if (parsed === null) {
+    statusText.textContent = 'Ready';
+    statusText.className = 'value';
+    depthText.textContent = '0';
+    keysText.textContent = '0';
+  } else {
+    statusText.textContent = 'Valid JSON ✓';
+    statusText.className = 'value valid';
+    depthText.textContent = getDepth(parsed);
+    keysText.textContent = countKeys(parsed);
+  }
+}
+
+function formatJSON() {
+  errorBox.classList.remove('visible');
+  const parsed = getJSON();
+  if (parsed === undefined) {
+    try { JSON.parse(inputArea.value); } catch(e) {
+      errorBox.textContent = '❌ Parse Error: ' + e.message;
+      errorBox.classList.add('visible');
+    }
+    return;
+  }
+  if (parsed === null) { outputArea.innerHTML = '<span class="brace">// No input</span>'; return; }
+  setOutput(JSON.stringify(parsed, null, 2), highlightJSON(parsed));
+  updateStats();
+}
+
+function minifyJSON() {
+  errorBox.classList.remove('visible');
+  const parsed = getJSON();
+  if (parsed === undefined) {
+    try { JSON.parse(inputArea.value); } catch(e) {
+      errorBox.textContent = '❌ Parse Error: ' + e.message;
+      errorBox.classList.add('visible');
+    }
+    return;
+  }
+  if (parsed === null) { outputArea.innerHTML = '<span class="brace">// No input</span>'; return; }
+  const minified = JSON.stringify(parsed);
+  const bytes = new Blob([minified]).size;
+  setOutput(minified);
+  outputArea.innerHTML = '<span style="color:var(--green)">Minified! ' + bytes + ' bytes</span>\n\n' + minified.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  updateStats();
+}
+
+function validateJSON() {
+  errorBox.classList.remove('visible');
+  const val = inputArea.value.trim();
+  if (!val) { outputArea.innerHTML = '<span class="brace">// No input to validate</span>'; return; }
+  try {
+    JSON.parse(val);
+    outputArea.innerHTML = '<span style="color:var(--green);font-size:1.1rem">✅ Valid JSON!</span>\n\n<span style="color:var(--text2)">Size: ' + new Blob([val]).size + ' bytes\nLines: ' + val.split('\n').length + '\nDepth: ' + getDepth(JSON.parse(val)) + '\nKeys: ' + countKeys(JSON.parse(val)) + '</span>';
+    updateStats();
+  } catch(e) {
+    outputArea.innerHTML = '<span style="color:var(--red);font-size:1.1rem">❌ Invalid JSON</span>\n\n' + e.message.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    errorBox.textContent = '❌ ' + e.message;
+    errorBox.classList.add('visible');
+    updateStats();
+  }
+}
+
+function sortKeys() {
+  errorBox.classList.remove('visible');
+  const parsed = getJSON();
+  if (parsed === undefined) {
+    try { JSON.parse(inputArea.value); } catch(e) {
+      errorBox.textContent = '❌ Parse Error: ' + e.message;
+      errorBox.classList.add('visible');
+    }
+    return;
+  }
+  if (parsed === null) return;
+
+  function sortObj(obj) {
+    if (Array.isArray(obj)) return obj.map(sortObj);
+    if (obj !== null && typeof obj === 'object') {
+      const sorted = {};
+      Object.keys(obj).sort().forEach(k => sorted[k] = sortObj(obj[k]));
+      return sorted;
+    }
+    return obj;
+  }
+
+  const sorted = sortObj(parsed);
+  setOutput(JSON.stringify(sorted, null, 2), highlightJSON(sorted));
+  inputArea.value = JSON.stringify(sorted, null, 2);
+  updateStats();
+}
+
+function escapeJSON() {
+  const val = inputArea.value;
+  if (!val.trim()) return;
+  inputArea.value = JSON.stringify(val);
+  updateStats();
+}
+
+function unescapeJSON() {
+  try {
+    inputArea.value = JSON.parse(inputArea.value);
+    updateStats();
+  } catch(e) {
+    errorBox.textContent = '❌ Cannot unescape: not a valid JSON string';
+    errorBox.classList.add('visible');
+  }
+}
+
+function copyOutput() {
+  const text = outputArea.textContent || outputArea.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.toolbar button:nth-child(4)');
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy Output', 1500);
+  });
+}
+
+function downloadOutput() {
+  const text = outputArea.textContent || '';
+  const blob = new Blob([text], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'formatted.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function clearAll() {
+  inputArea.value = '';
+  outputArea.innerHTML = '<span class="brace">// Formatted JSON will appear here</span>';
+  errorBox.classList.remove('visible');
+  updateStats();
+}
+
+function clearInput() {
+  inputArea.value = '';
+  updateStats();
+}
+
+async function pasteFromClipboard() {
+  try {
+    const text = await navigator.clipboard.readText();
+    inputArea.value = text;
+    updateStats();
+  } catch(e) {
+    errorBox.textContent = '❌ Cannot read clipboard — check browser permissions';
+    errorBox.classList.add('visible');
+  }
+}
+
+function loadSample() {
+  inputArea.value = JSON.stringify({
+    "tool": "JSON Formatter & Validator",
+    "version": "2.0.0",
+    "description": "A free online tool to format, validate, and minify JSON data",
+    "features": [
+      "Format & Beautify",
+      "Minify",
+      "Validate with error reporting",
+      "Syntax highlighting",
+      "Key sorting",
+      "Escape/Unescape",
+      "Download output",
+      "Real-time statistics"
+    ],
+    "stats": {
+      "totalTools": 62,
+      "category": "developer-tools",
+      "isFree": true,
+      "privacy": {
+        "clientSide": true,
+        "dataLeaves": false,
+        "tracking": "none"
+      }
+    },
+    "author": {
+      "name": "Free Tools Hub",
+      "url": "https://nguyenminhduc9988.github.io/free-tools-hub/"
+    },
+    "tags": ["json", "formatter", "validator", "beautifier", "minifier", "developer"],
+    "lastUpdated": "2026-06-29"
+  }, null, 2);
+  updateStats();
+  formatJSON();
+}
+
+// Handle tab key in textarea
+inputArea.addEventListener('keydown', function(e) {
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    const start = this.selectionStart;
+    const end = this.selectionEnd;
+    this.value = this.value.substring(0, start) + '  ' + this.value.substring(end);
+    this.selectionStart = this.selectionEnd = start + 2;
+  }
+});
+
+// Auto-format on paste
+inputArea.addEventListener('paste', function() {
+  setTimeout(() => { updateStats(); }, 100);
+});
+
+updateStats();
 </script>
-<footer><div class="wrap">
-<p>© 2026 ToolNest. Free online tools — fast, private, no signup.</p>
-<p>Tools run entirely in your browser. Your data never leaves your device.</p>
-</div></footer>
-<script>
-function filt(){var v=document.getElementById('q').value.toLowerCase();var c=document.querySelectorAll('[data-tool]');c.forEach(function(el){var t=(el.getAttribute('data-search')||'').toLowerCase();el.style.display=(!v||t.indexOf(v)>-1)?'':'none';})}
-</script>
-</body></html>
+
+  <!-- Ko-fi Support Button -->
+  <div style="text-align:center;margin:20px 0;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;">
+    <p style="margin:0 0 10px;color:var(--muted);font-size:.9rem;">Find these tools useful?</p>
+    <a href="https://ko-fi.com/YOUR_USERNAME" target="_blank" style="display:inline-block;">
+      <img src="https://storage.ko-fi.com/cdn/kofi2.png?v=6" alt="Buy Me a Coffee at ko-fi.com" height="36" style="border:0;">
+    </a>
+    <p style="margin:8px 0 0;color:var(--muted);font-size:.75rem;">Support keeps 63+ tools free forever. No ads, no tracking.</p>
+  </div>
+
+</body>
+</html>
