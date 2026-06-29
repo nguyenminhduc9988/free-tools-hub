@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Image to Base64 Converter — Free Online Tool | ToolNest</title>
+<meta name="description" content="Convert images to Base64 data URLs — works offline, no upload">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/tools/image-to-base64">
+<meta name="keywords" content="image to base64, base64 image encoder, image data url converter, base64 encode image">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Image to Base64 Converter — Free Online Tool | ToolNest">
+<meta property="og:description" content="Convert images to Base64 data URLs — works offline, no upload">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/tools/image-to-base64">
+<meta name="theme-color" content="#0f1115">
+<script type="application/ld+json">{{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Image to Base64 Converter — Free Online Tool | ToolNest",
+  "description": "Convert images to Base64 data URLs — works offline, no upload",
+  "url": "https://nguyenminhduc9988.github.io/free-tools-hub/tools/image-to-base64",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {{"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
+}}</script>
+<style>
+:root{{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}}
+*{{box-sizing:border-box}}body{{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}}
+a{{color:var(--acc);text-decoration:none}}a:hover{{text-decoration:underline}}
+.wrap{{max-width:980px;margin:0 auto;padding:0 18px}}
+header.top{{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}}
+.nav{{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}}
+.logo{{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}}.logo span{{color:var(--acc2)}}
+.nav a.lnk{{color:var(--muted);font-size:.92rem}}.nav a.lnk:hover{{color:var(--ink);text-decoration:none}}
+.hero{{padding:46px 0 22px;text-align:center}}.hero h1{{font-size:2.4rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}}.hero p{{color:var(--muted);font-size:1.05rem;max-width:620px;margin:6px auto 0}}
+section.body{{padding:14px 0 50px}}
+.tool{{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:16px 0}}
+textarea,input[type=text],input[type=number],input[type=date],select,input[type=file]{{width:100%;background:#0b0d12;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.9rem}}
+textarea{{min-height:150px;resize:vertical}}textarea:focus,input:focus,select:focus{{outline:none;border-color:var(--acc)}}
+.btns{{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}}
+button{{cursor:pointer;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:600;background:var(--acc);color:#fff;transition:.15s}}button:hover{{filter:brightness(1.08)}}
+button.sec{{background:var(--card);color:var(--ink);border:1px solid var(--line)}}
+.out{{margin-top:14px;padding:14px;background:#0b0d12;border:1px solid var(--line);border-radius:10px;font-size:.95rem}}
+.msg{{margin-top:10px;padding:10px 13px;border-radius:10px;font-size:.9rem}}
+.msg.ok{{background:rgba(34,211,166,.12);color:var(--ok);border:1px solid rgba(34,211,166,.3)}}
+.msg.err{{background:rgba(255,107,107,.12);color:var(--err);border:1px solid rgba(255,107,107,.3)}}
+.label{{display:block;font-size:.8rem;color:var(--muted);margin:10px 0 5px;text-transform:uppercase;letter-spacing:.5px}}
+.row2{{display:grid;grid-template-columns:1fr 1fr;gap:14px}}
+.row3{{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}}
+@media(max-width:640px){{.row2,.row3{{grid-template-columns:1fr}}.hero h1{{font-size:1.9rem}}}}
+.seo{{color:var(--muted);font-size:.95rem;margin-top:30px}}.seo h2{{color:var(--ink);font-size:1.2rem;margin:1.2em 0 .3em}}.seo p{{margin:.5em 0}}
+footer{{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}}
+.ad-slot{{display:flex;align-items:center;justify-content:center;margin:18px 0;min-height:90px;background:var(--card);border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.8rem}}
+.crumbs{{font-size:.82rem;color:var(--muted);margin:8px 0}}.crumbs a{{color:var(--muted)}}
+.result-box{{background:rgba(79,140,255,.1);border:1px solid var(--acc);border-radius:10px;padding:16px;font-size:1.1rem;font-weight:600;color:var(--acc)}}
+#dropzone{{border:2px dashed var(--line);border-radius:10px;padding:40px;text-align:center;transition:.2s}}#dropzone.dragover{{border-color:var(--acc);background:rgba(79,140,255,.05)}}
+.preview{{max-width:100%;max-height:300px;border-radius:8px;margin-top:10px}}
+.file-list{{margin-top:12px;max-height:200px;overflow-y:auto}}
+.file-item{{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--card);border:1px solid var(--line);border-radius:8px;margin:4px 0}}
+.file-item button{{padding:6px 12px;font-size:.8rem}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="/free-tools-hub/">ToolNest<span>.</span></a>
+<a class="lnk" href="/free-tools-hub/">All Tools</a>
+<a class="lnk" href="/free-tools-hub/about">About</a>
+</div></header>
+<div class="wrap">
+<div class="hero"><h1>Image to Base64 Converter</h1><p>Convert images to Base64 data URLs — works offline, no upload</p></div>
+<div class="ad-slot" data-ad="banner">
+  <script type="text/javascript">
+    atOptions = {{'key' : '5392577','format' : 'iframe','height' : 90,'width' : 728,'params' : {}}};
+  </script>
+</div>
+<section class="body">
+
+<div class="tool">
+<h2>Image to Base64 Converter</h2>
+<div id="dropzone" ondragover="e=>{e.preventDefault();this.classList.add('dragover')}" ondragleave="e=>this.classList.remove('dragover')" ondrop="e=>{e.preventDefault();this.classList.remove('dragover');handleFiles(e.dataTransfer.files)}">
+<p>Drag & drop an image here, or <input type="file" id="imgInput" accept="image/*" onchange="handleFiles(this.files)" style="display:inline-block;width:auto;margin-left:10px"> select file</p>
+<p style="font-size:.85rem;color:var(--muted)">Max 10MB. Processing happens in your browser.</p>
+</div>
+<div style="margin-top:12px" id="previewContainer" style="display:none">
+<img id="preview" class="preview"><br>
+<label class="label">Base64 Data URL</label>
+<textarea id="base64Output" readonly rows="6"></textarea>
+<div class="btns" style="margin-top:12px"><button onclick="copyBase64()">Copy Base64</button><button class="sec" onclick="downloadBase64()">Download .txt</button></div>
+</div>
+<div class="msg ok" id="successMsg" style="display:none"></div>
+<div class="msg err" id="errorMsg" style="display:none"></div>
+</div>
+<div class="ad-slot" data-ad="banner">
+  <script type="text/javascript">
+    atOptions = {{'key' : '5392577','format' : 'iframe','height' : 90,'width' : 728,'params' : {}}};
+  </script>
+</div>
+</section>
+<div class="seo">
+<h2>Free Image to Base64 Converter Online</h2>
+<p>Convert any image to a Base64 data URL string. Works entirely in your browser — no uploads, no size limits beyond browser memory.</p>
+</div>
+</div>
+<footer><div class="wrap"><p>&copy; 2026 ToolNest. Free online tools — fast, private, no signup.</p></div></footer>
+
+<script>
+function handleFiles(files) {
+    const f = files[0];
+    if (!f || !f.type.startsWith('image/')) return;
+    if (f.size > 10 * 1024 * 1024) { showError('File too large (max 10MB)'); return; }
+    const reader = new FileReader();
+    reader.onload = e => {
+        const base64 = e.target.result;
+        document.getElementById('preview').src = base64;
+        document.getElementById('base64Output').value = base64;
+        document.getElementById('previewContainer').style.display = 'block';
+    };
+    reader.readAsDataURL(f);
+}
+function copyBase64() {
+    const ta = document.getElementById('base64Output');
+    ta.select(); document.execCommand('copy');
+    showSuccess('Copied to clipboard!');
+}
+function downloadBase64() {
+    const b64 = document.getElementById('base64Output').value;
+    if (!b64) return;
+    const blob = new Blob([b64], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'image-base64.txt'; a.click();
+    URL.revokeObjectURL(url);
+}
+function showSuccess(msg) { const s=document.getElementById('successMsg'); s.textContent=msg; s.style.display='block'; setTimeout(()=>s.style.display='none',2000); }
+function showError(msg) { const e=document.getElementById('errorMsg'); e.textContent=msg; e.style.display='block'; }
+document.getElementById('imgInput').addEventListener('change', e=>handleFiles(e.target.files));
+</script>
+</body></html>
