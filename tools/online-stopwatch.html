@@ -98,4 +98,17 @@ else{running=true;$('startBtn').textContent='Stop';startT=performance.now()-elap
 function tick(){if(!running)return;elapsed=performance.now()-startT;$('timer').textContent=fmt(elapsed);raf=requestAnimationFrame(tick);}
 function lap(){if(elapsed===0)return;laps.push(elapsed);var h='<div style="margin-top:6px"><b>Lap '+laps.length+':</b> '+fmt(elapsed);if(laps.length>1){var d=laps[laps.length-1]-laps[laps.length-2];h+=' <span style="color:var(--muted);font-size:.85rem">(+'+fmt(d)+')</span>';}h+='</div>';$('laps').innerHTML=h+laps.map(function(l,i){return '<div style="padding:6px 0;border-bottom:1px solid var(--line);font-size:.9rem">Lap '+(i+1)+': '+fmt(l)+'</div>';}).reverse().join('');}
 function reset(){running=false;elapsed=0;laps=[];$('timer').textContent='00:00:00.000';$('startBtn').textContent='Start';$('laps').innerHTML='';cancelAnimationFrame(raf);}</script>
+
+<nav class="mojo-network" style="background:#0f1115;padding:20px;text-align:center;border-top:1px solid #262b36;margin-top:40px">
+  <p style="color:#9aa3b2;font-size:.85rem;margin-bottom:10px">Part of the <strong style="color:#22d3a6">MOJO Network</strong></p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:800px;margin:0 auto">
+    <a href="https://nguyenminhduc9988.github.io/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">🔧 ToolNest</a>
+    <a href="https://nguyenminhduc9988.github.io/crypto-brief/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">₿ Crypto Brief</a>
+    <a href="https://nguyenminhduc9988.github.io/finance-daily/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">💰 Finance Daily</a>
+    <a href="https://nguyenminhduc9988.github.io/health-today/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">❤️ Health Today</a>
+    <a href="https://nguyenminhduc9988.github.io/productivity-hacks/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">⚡ Productivity</a>
+    <a href="https://nguyenminhduc9988.github.io/ai-tool-hub/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">🤖 AI Tool Hub</a>
+    <a href="https://nguyenminhduc9988.github.io/sidehustlestack/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">🚀 SideHustleStack</a>
+  </div>
+</nav>
 </body></html>
