@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="ko-fi-verification" content="64ea4528-4867-47f4-9dbd-3e9dc4a42179">
+<meta name="google-adsense-account" content="ca-pub-1432831545676654">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7E63EG326X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-7E63EG326X");
+</script>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>20 Free ChatGPT Prompts for Developers (2026) — Debugging, Code Review, Tests &amp; SQL | ToolNest</title>
+<meta name="description" content="15 hand-tested free ChatGPT prompts for developers and programmers — debugging, code review, refactoring, unit tests, regex and SQL. Copy-paste, no signup. Updated 2026.">
+<link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/chatgpt-prompts-for-developers.html">
+<meta name="keywords" content="chatgpt prompts for developers, chatgpt prompts for coding, chatgpt prompts for programmers, ai prompts for debugging, chatgpt code review prompt, chatgpt prompts for software engineers, best coding chatgpt prompts 2026, ai prompts for writing tests">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20 Free ChatGPT Prompts for Developers (2026) — Debugging, Code Review, Tests &amp; SQL | ToolNest">
+<meta property="og:description" content="15 hand-tested free ChatGPT prompts for developers — debugging, code review, refactoring, unit tests, regex and SQL. One-click copy, no signup.">
+<meta property="og:url" content="https://nguyenminhduc9988.github.io/free-tools-hub/chatgpt-prompts-for-developers.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="20 Free ChatGPT Prompts for Developers (2026)">
+<meta name="twitter:description" content="15 hand-tested free ChatGPT prompts for programmers — debugging, code review, tests, regex &amp; SQL. One-click copy, no signup.">
+<meta name="theme-color" content="#0f1115">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"20 Free ChatGPT Prompts for Developers (2026) — Debugging, Code Review, Tests & SQL","description":"15 hand-tested free ChatGPT prompts you can copy-paste right now for debugging, code review, refactoring, unit tests, regex and SQL.","author":{"@type":"Person","name":"Duc Nguyen"},"publisher":{"@type":"Organization","name":"ToolNest"},"datePublished":"2026-07-04","dateModified":"2026-07-04","mainEntityOfPage":{"@type":"WebPage","@id":"https://nguyenminhduc9988.github.io/free-tools-hub/chatgpt-prompts-for-developers.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are these developer ChatGPT prompts free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every prompt on this page is 100% free to copy and use in ChatGPT, Claude, Gemini, Copilot or any AI coding assistant. No signup and no payment required."}},{"@type":"Question","name":"Do these prompts work for any programming language?","acceptedAnswer":{"@type":"Answer","text":"Yes. The prompts are language-agnostic — just paste your code (Python, JavaScript, Go, Rust, Java, SQL, etc.) into the bracketed placeholder and the model adapts to whatever language it sees."}},{"@type":"Question","name":"What is the best ChatGPT prompt for debugging code?","acceptedAnswer":{"@type":"Answer","text":"Use the 'Rubber-Duck Debugger' prompt on this page. It forces the model to explain what your code actually does line by line before guessing at the fix, which surfaces the real bug instead of a plausible-looking wrong answer."}}]}
+</script>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ee;--muted:#9aa3b2;--acc:#4f8cff;--acc2:#22d3a6;--line:#262b36;--ok:#22d3a6;--err:#ff6b6b}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.5px}
+.logo span{color:var(--acc2)}
+.nav a.lnk{color:var(--muted);font-size:.92rem}
+.nav a.lnk:hover{color:var(--ink);text-decoration:none}
+.hero{padding:42px 0 10px;text-align:center}
+.hero h1{font-size:2.2rem;margin:.2em 0;font-weight:800;letter-spacing:-1px}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:640px;margin:8px auto 0}
+.crumbs{font-size:.82rem;color:var(--muted);margin:14px 0 0}
+.crumbs a{color:var(--muted)}
+.catnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 6px}
+.catnav a{font-size:.82rem;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 14px;color:var(--muted)}
+.catnav a:hover{color:var(--ink);border-color:var(--acc);text-decoration:none}
+h2.cat{font-size:1.35rem;margin:34px 0 4px;letter-spacing:-.3px;display:flex;align-items:center;gap:8px}
+.cat .em{font-size:1.4rem}
+.cat-sub{color:var(--muted);font-size:.92rem;margin:0 0 8px}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}
+.prompt h3{margin:0 0 4px;font-size:1.05rem}
+.prompt .use{color:var(--muted);font-size:.85rem;margin:0 0 12px}
+.prompt pre{white-space:pre-wrap;word-wrap:break-word;background:#0b0d12;border:1px solid var(--line);border-radius:10px;padding:14px;margin:0;font-family:'SFMono-Regular',Consolas,monospace;font-size:.88rem;color:#d6dae4;line-height:1.55}
+.copy{cursor:pointer;border:none;border-radius:9px;padding:9px 16px;font-size:.85rem;font-weight:600;background:var(--acc);color:#fff;margin-top:11px;transition:.15s}
+.copy:hover{filter:brightness(1.1)}
+.copy.done{background:var(--acc2);color:#06231b}
+.cta{background:linear-gradient(135deg,#1b2130,#171a21);border:1px solid var(--acc);border-radius:16px;padding:26px;margin:34px 0;text-align:center}
+.cta h2{margin:0 0 6px;font-size:1.45rem}
+.cta p{color:var(--muted);margin:0 auto 16px;max-width:560px}
+.cta .buy{display:inline-block;background:var(--acc2);color:#06231b;padding:13px 26px;border-radius:12px;font-weight:800;font-size:1.02rem}
+.cta .buy:hover{filter:brightness(1.07);text-decoration:none}
+.cta .sub{display:block;color:var(--muted);font-size:.8rem;margin-top:10px}
+.ad-slot{display:flex;align-items:center;justify-content:center;margin:22px 0;min-height:90px;background:var(--card);border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:.8rem}
+.seo{color:var(--muted);font-size:.96rem;margin:40px 0 10px}
+.seo h2{color:var(--ink);font-size:1.3rem;margin:1.3em 0 .3em}
+.seo h3{color:var(--ink);font-size:1.05rem;margin:1em 0 .2em}
+.seo p{margin:.5em 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem;text-align:center}
+@media(max-width:640px){.hero h1{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<!-- July Promo Banner -->
+<div style="background:linear-gradient(90deg,#6366f1,#a855f7,#ec4899);text-align:center;padding:0.5rem 1rem;font-size:0.82rem;font-weight:600;color:#fff;">
+  🎉 <strong>Duc Store July Sale — 25% OFF</strong> · The Ultimate AI Prompt Vault (68 prompts) · Code: <span style="background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:4px;font-weight:700;">JULY25</span> · <a href="https://ducminh5.gumroad.com/l/slrlhk" style="color:#fff;text-decoration:underline;">Get it →</a>
+</div>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="/free-tools-hub/">ToolNest<span>.</span></a>
+<a class="lnk" href="/free-tools-hub/">All Tools</a>
+</div></header>
+
+<div class="wrap">
+<div class="crumbs"><a href="/free-tools-hub/">ToolNest</a> › ChatGPT Prompts for Developers</div>
+<div class="hero">
+<h1>20 Free ChatGPT Prompts for Developers</h1>
+<p>Copy-paste prompts for the work you actually do — debugging, code review, refactoring, writing tests, regex and SQL. Language-agnostic and battle-tested. Works with ChatGPT, Claude, Gemini and Copilot. No signup — just tap <strong>Copy</strong>.</p>
+</div>
+
+<div class="catnav">
+  <a href="#debug">🐛 Debugging</a>
+  <a href="#review">🔍 Code Review</a>
+  <a href="#tests">🧪 Tests</a>
+  <a href="#data">🗄️ SQL &amp; Regex</a>
+  <a href="#docs">📐 Docs &amp; Design</a>
+</div>
+
+<div class="ad-slot" data-ad="banner">Advertisement</div>
+
+<p style="color:#9aa3b2;font-size:.95rem;max-width:760px">An LLM is only as good as the instructions you give it. Vague prompts like "fix my code" get you a confident, plausible-looking wrong answer. Each prompt below gives the model a role, forces it to reason before answering, and pins down the exact output you want — so you get something you can actually paste into your editor. Swap the <code style="background:#0b0d12;padding:1px 5px;border-radius:4px">[brackets]</code> for your code and go.</p>
+
+<!-- ============ DEBUGGING ============ -->
+<h2 class="cat" id="debug"><span class="em">🐛</span> Debugging</h2>
+<p class="cat-sub">Find the real bug — not the one that looks obvious.</p>
+
+<div class="prompt">
+  <h3>1. The Rubber-Duck Debugger</h3>
+  <p class="use">Best for: bugs where the fix isn't obvious and you've been staring too long.</p>
+  <pre id="p1">You are a senior engineer pair-programming with me. Before suggesting any fix, walk through the code below line by line and explain in plain English what it actually does — including edge cases and what happens with empty, null, or unexpected inputs. THEN state the specific bug, why it happens, and the minimal fix. Do not rewrite the whole thing; give me the smallest diff that solves it.
+
+CODE:
+[paste your code]
+
+EXPECTED behavior: [what should happen]
+ACTUAL behavior: [what happens instead, plus any error message]</pre>
+  <button class="copy" data-t="p1">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>2. Decode This Stack Trace</h3>
+  <p class="use">Best for: cryptic errors from a framework or dependency you don't fully know.</p>
+  <pre id="p2">Explain this error to me like I'm a competent developer who just doesn't know this specific library. Break down: (1) what the error message literally means, (2) the 3 most common root causes ranked by likelihood, (3) exactly what to check or print to confirm which one it is, and (4) the fix for each. Be concrete — reference the actual line/symbol names in the trace.
+
+ERROR / STACK TRACE:
+[paste it here]
+
+CONTEXT: [language, framework, what you were doing]</pre>
+  <button class="copy" data-t="p2">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>3. The Heisenbug Hunter</h3>
+  <p class="use">Best for: intermittent bugs that only happen sometimes.</p>
+  <pre id="p3">I have a bug that only reproduces intermittently. Act as a debugging specialist. Based on the description below, list the usual suspects for non-deterministic behavior — race conditions, uninitialized state, ordering assumptions, time/timezone, caching, floating-point, network flakiness — and for each, tell me how to quickly rule it in or out. End with the single most likely cause given my stack and the cheapest experiment to confirm it.
+
+WHAT HAPPENS: [describe the flaky behavior]
+STACK: [language, concurrency model, environment]</pre>
+  <button class="copy" data-t="p3">Copy prompt</button>
+</div>
+
+<div class="cta">
+  <h2>Want all 68 prompts, not just 15?</h2>
+  <p>This page is a taster. <strong>The Ultimate AI Prompt Vault</strong> gives you 68 battle-tested, categorized prompts — with fill-in-the-blank variables and usage notes — covering coding, debugging, writing, marketing, sales and research. One download, yours forever.</p>
+  <a class="buy" href="https://ducminh5.gumroad.com/l/slrlhk" target="_blank" rel="noopener">Get the Vault — $7 →</a>
+  <span class="sub">Instant download · Use code <strong>JULY25</strong> for 25% off · 100% money-back guarantee</span>
+</div>
+
+<!-- ============ CODE REVIEW & REFACTOR ============ -->
+<h2 class="cat" id="review"><span class="em">🔍</span> Code Review &amp; Refactoring</h2>
+<p class="cat-sub">Get a second pair of eyes that never gets tired or polite.</p>
+
+<div class="prompt">
+  <h3>4. The Ruthless Code Reviewer</h3>
+  <p class="use">Best for: catching issues before your teammate does in the PR.</p>
+  <pre id="p4">Review the code below as a strict but constructive senior reviewer. Organize your feedback into: 🔴 Bugs / correctness issues, 🟠 Security or data-safety concerns, 🟡 Readability &amp; maintainability, 🟢 Nice-to-haves. For each point, quote the specific line, explain why it matters, and show the corrected version. Skip praise and style nitpicks a linter would catch — focus on what a human reviewer must catch.
+
+CODE:
+[paste your code]</pre>
+  <button class="copy" data-t="p4">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>5. Refactor Without Changing Behavior</h3>
+  <p class="use">Best for: cleaning up a function you're afraid to touch.</p>
+  <pre id="p5">Refactor the function below for readability and maintainability WITHOUT changing its observable behavior. Keep the same inputs, outputs, and side effects. Explain each change and why it's safe. Call out any place where you're unsure the behavior is identical so I can add a test there first. Preserve existing naming conventions and the language's idioms.
+
+CODE:
+[paste your code]</pre>
+  <button class="copy" data-t="p5">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>6. Explain This Legacy Code</h3>
+  <p class="use">Best for: inheriting code with zero comments and no author around.</p>
+  <pre id="p6">I inherited this code with no documentation. Explain it to me at three levels: (1) a one-paragraph summary of what it does and why it probably exists, (2) a section-by-section walkthrough of the logic, and (3) a list of hidden assumptions, gotchas, or things that would break if I changed them. Flag anything that looks like a bug or a workaround for a bug.
+
+CODE:
+[paste your code]</pre>
+  <button class="copy" data-t="p6">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>7. Make It Faster (For Real)</h3>
+  <p class="use">Best for: optimizing without guessing where the cost is.</p>
+  <pre id="p7">Analyze the code below for performance. First, tell me the actual time/space complexity of the hot path and where the real cost is — don't micro-optimize things that don't matter. Then propose the single highest-impact change, show the optimized version, and state the new complexity. If the bottleneck is likely I/O, database, or network rather than CPU, say so and point me to the right fix instead.
+
+CODE:
+[paste your code]
+CONTEXT: [rough input size, how often it runs]</pre>
+  <button class="copy" data-t="p7">Copy prompt</button>
+</div>
+
+<div class="ad-slot" data-ad="mid">Advertisement</div>
+
+<!-- ============ TESTS ============ -->
+<h2 class="cat" id="tests"><span class="em">🧪</span> Tests</h2>
+<p class="cat-sub">Write the tests you keep meaning to write.</p>
+
+<div class="prompt">
+  <h3>8. Generate the Test Cases I'd Forget</h3>
+  <p class="use">Best for: covering the edge cases, not just the happy path.</p>
+  <pre id="p8">Write a thorough set of unit tests for the function below using [test framework — e.g. pytest / Jest / JUnit]. Cover: the happy path, boundary values, empty/null/zero inputs, invalid inputs, and any edge case implied by the logic. Name each test so it reads as a sentence describing the behavior. List any case you think should be tested but can't, and why.
+
+CODE:
+[paste your function]</pre>
+  <button class="copy" data-t="p8">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>9. Turn This Bug Into a Regression Test</h3>
+  <p class="use">Best for: making sure a bug you just fixed never comes back.</p>
+  <pre id="p9">I just fixed the bug described below. Write a focused regression test in [framework] that would have FAILED before the fix and PASSES after it. Include a comment explaining what the bug was so a future reader understands why this test exists. Keep it minimal and deterministic — no reliance on real time, network, or random values.
+
+THE BUG: [describe what was broken]
+THE FIX: [describe or paste the corrected code]</pre>
+  <button class="copy" data-t="p9">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>10. Design a Test Plan for This Feature</h3>
+  <p class="use">Best for: QA-ing a feature before you ship it.</p>
+  <pre id="p10">Act as a QA engineer. Given the feature description below, produce a test plan as a table: Scenario, Steps, Expected result, Priority. Cover functional cases, edge cases, error handling, permissions/auth, and at least 3 "what could go wrong" scenarios a developer would overlook. Mark which ones are worth automating vs checking manually once.
+
+FEATURE: [describe what it does and who uses it]</pre>
+  <button class="copy" data-t="p10">Copy prompt</button>
+</div>
+
+<!-- ============ SQL & REGEX ============ -->
+<h2 class="cat" id="data"><span class="em">🗄️</span> SQL &amp; Regex</h2>
+<p class="cat-sub">The two things everyone Googles ten times a week.</p>
+
+<div class="prompt">
+  <h3>11. Write &amp; Explain This SQL Query</h3>
+  <p class="use">Best for: getting a correct query and understanding why it's correct.</p>
+  <pre id="p11">Write a SQL query for [database — e.g. PostgreSQL / MySQL / SQLite] that does the following: [describe what you want]. My relevant tables and columns are: [paste schema or describe]. Give me the query, then explain each clause in one line, note any assumptions about the data, and warn me about anything that could make it slow at scale (missing index, N+1, full scan). Show a faster alternative if one exists.</pre>
+  <button class="copy" data-t="p11">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>12. Optimize My Slow Query</h3>
+  <p class="use">Best for: a query that works but crawls on real data.</p>
+  <pre id="p12">This SQL query is slow. Act as a database performance expert. Explain likely reasons it's slow, what to look for in the EXPLAIN/EXPLAIN ANALYZE output, which indexes would help (and their trade-offs), and a rewritten version if the query itself can be improved. Assume [rough row counts] and [database engine].
+
+QUERY:
+[paste your query]
+SCHEMA / INDEXES: [what exists now]</pre>
+  <button class="copy" data-t="p12">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>13. Build the Regex I Need</h3>
+  <p class="use">Best for: matching a pattern without 30 minutes of trial and error.</p>
+  <pre id="p13">Write a regular expression for [flavor — e.g. JavaScript / PCRE / Python re] that matches: [describe exactly what should match]. It should match these examples: [list valid strings] and NOT match these: [list invalid strings]. Give me the regex, a plain-English breakdown of each part, and a warning about any edge case it doesn't handle. If regex is the wrong tool here, tell me what to use instead.</pre>
+  <button class="copy" data-t="p13">Copy prompt</button>
+</div>
+
+<!-- ============ DOCS & DESIGN ============ -->
+<h2 class="cat" id="docs"><span class="em">📐</span> Docs &amp; Design</h2>
+<p class="cat-sub">The parts of the job that aren't typing code.</p>
+
+<div class="prompt">
+  <h3>14. Document This Function Properly</h3>
+  <p class="use">Best for: docstrings and comments that explain <em>why</em>, not just what.</p>
+  <pre id="p14">Add documentation to the code below in the idiomatic style for [language] (e.g. JSDoc / Google-style docstrings / rustdoc). Document what it does, each parameter and return value, what it throws/errors on, and — most importantly — any non-obvious <em>why</em> behind the logic. Don't restate the obvious ("increments i by 1"). Keep it concise enough that a busy dev will actually read it.
+
+CODE:
+[paste your code]</pre>
+  <button class="copy" data-t="p14">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>15. Write a README That People Read</h3>
+  <p class="use">Best for: an open-source repo or internal tool that needs onboarding.</p>
+  <pre id="p15">Write a clear README for the project described below. Sections: one-line description, the problem it solves, quick-start (install + minimal working example), key features, configuration, and common gotchas. Lead with a copy-pasteable example that works in under 60 seconds. Skip filler and badges spam. Tone: helpful senior dev explaining it to a new teammate.
+
+PROJECT: [what it is, language, how it's used]</pre>
+  <button class="copy" data-t="p15">Copy prompt</button>
+</div>
+
+<div class="prompt">
+  <h3>16. Pressure-Test This Design Decision</h3>
+  <p class="use">Best for: choosing an approach before you commit a week to it.</p>
+  <pre id="p16">I'm deciding how to build [describe the feature or system]. My leading approach is [your plan]. Act as a pragmatic staff engineer. Give me: the 3 biggest risks or failure modes of this approach, one simpler alternative I might be over-engineering past, the scaling/maintenance cost I'm underestimating, and the one question I should answer before writing any code. Be direct — I want the flaws, not reassurance.</pre>
+  <button class="copy" data-t="p16">Copy prompt</button>
+</div>
+
+<div class="cta">
+  <h2>Get the full vault — every prompt you just tried, plus 52 more</h2>
+  <p><strong>The Ultimate AI Prompt Vault</strong>: 68 categorized, ready-to-run prompts for coding, debugging, writing, marketing, sales and research — each with fill-in-the-blank variables so you never start from a blank prompt again. Built by a developer who uses them daily.</p>
+  <a class="buy" href="https://ducminh5.gumroad.com/l/slrlhk" target="_blank" rel="noopener">Get the Vault — $7 →</a>
+  <span class="sub">Instant download · Code <strong>JULY25</strong> = 25% off · Money-back guarantee</span>
+</div>
+
+<!-- ============ SEO PROSE ============ -->
+<div class="seo">
+<h2>How to prompt ChatGPT for coding without getting burned</h2>
+<p>AI coding assistants are fast, confident, and sometimes confidently wrong. The trick to trusting the output is structuring the prompt so the model has to <strong>reason before it answers</strong>. Every prompt on this page does that: it assigns a role ("act as a senior reviewer"), forces a step ("explain what the code does before fixing it"), and specifies the output format. That's why they surface the real problem instead of a plausible-looking guess.</p>
+
+<h3>Do these work with Claude, Gemini and Copilot?</h3>
+<p>Yes. None of these are ChatGPT-specific — they're plain-language instructions, so they work in ChatGPT (GPT-4o / GPT-4.1), Claude, Gemini, GitHub Copilot Chat, and local models like Llama or Qwen. Paste your code where the brackets are and run.</p>
+
+<h3>The habit that makes AI code review actually useful</h3>
+<p>Always paste the <em>real</em> code and the <em>real</em> error, and tell the model what you expected versus what happened. "My function is broken" gets you a lecture. "Here's the function, here's the input, I expected X and got Y" gets you the bug. The more concrete context you give, the less the model has to hallucinate — and hallucination is where AI coding tools cost you time instead of saving it.</p>
+
+<h3>Never trust, always verify</h3>
+<p>Treat AI output like a pull request from a talented but overconfident junior: read it, run it, test it. The prompts here are designed to make that verification easier — asking the model to flag its own uncertainty, show minimal diffs, and explain its reasoning — but the final <code style="background:#0b0d12;padding:1px 5px;border-radius:4px">git commit</code> is still on you.</p>
+
+<h3>When free prompts aren't enough</h3>
+<p>These 15 cover the situations most developers hit weekly. If you'd rather not rewrite prompts every time — and want the same quality across debugging, architecture, writing and research — the <a href="https://ducminh5.gumroad.com/l/slrlhk">Ultimate AI Prompt Vault</a> packs 68 of them into one organized download with variables and notes. Less than the price of lunch, and it pays for itself the first time it saves you an afternoon.</p>
+</div>
+
+<p style="text-align:center;margin:30px 0"><a href="/free-tools-hub/chatgpt-prompts.html" style="color:#4f8cff">← 50 more free ChatGPT prompts for everyday work, writing &amp; code</a> &nbsp;·&nbsp; <a href="/free-tools-hub/chatgpt-prompts-for-business.html" style="color:#4f8cff">Prompts for business &amp; marketing →</a></p>
+
+</div>
+
+<footer>
+  <div class="wrap">© 2026 ToolNest · Free tools &amp; prompts for people who build things · <a href="/free-tools-hub/">Home</a></div>
+</footer>
+
+<nav class="mojo-network" style="background:#0f1115;padding:20px;text-align:center;border-top:1px solid #262b36;margin-top:40px">
+  <p style="color:#9aa3b2;font-size:.85rem;margin-bottom:10px">Part of the <strong style="color:#22d3a6">MOJO Network</strong></p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:800px;margin:0 auto">
+    <a href="https://nguyenminhduc9988.github.io/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">🔧 ToolNest</a>
+    <a href="https://nguyenminhduc9988.github.io/crypto-brief/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">₿ Crypto Brief</a>
+    <a href="https://nguyenminhduc9988.github.io/finance-daily/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">💰 Finance Daily</a>
+    <a href="https://nguyenminhduc9988.github.io/health-today/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">❤️ Health Today</a>
+    <a href="https://nguyenminhduc9988.github.io/productivity-hacks/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">⚡ Productivity</a>
+    <a href="https://nguyenminhduc9988.github.io/duc-store/" style="color:#22d3a6;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #22d3a640;border-radius:16px;font-weight:600">🛒 Duc Store</a>
+  </div>
+</nav>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var el=document.getElementById(btn.getAttribute('data-t'));
+    var txt=el.innerText;
+    navigator.clipboard.writeText(txt).then(function(){
+      var old=btn.textContent;
+      btn.textContent='✓ Copied!';btn.classList.add('done');
+      if(typeof gtag==='function'){gtag('event','copy_prompt',{prompt_id:btn.getAttribute('data-t')});}
+      setTimeout(function(){btn.textContent=old;btn.classList.remove('done');},1600);
+    }).catch(function(){
+      var r=document.createRange();r.selectNode(el);
+      window.getSelection().removeAllRanges();window.getSelection().addRange(r);
+      try{document.execCommand('copy');btn.textContent='✓ Copied!';btn.classList.add('done');
+      setTimeout(function(){btn.textContent='Copy prompt';btn.classList.remove('done');},1600);}catch(e){}
+      window.getSelection().removeAllRanges();
+    });
+  });
+});
+</script>
+
+<!-- Ko-fi Floating Chat -->
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+<script>
+  kofiWidgetOverlay.draw('theaiproducer', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#00b9fe',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
+</body></html>
