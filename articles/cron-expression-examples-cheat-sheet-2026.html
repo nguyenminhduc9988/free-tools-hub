@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-adsense-account" content="ca-pub-1432831545676654">
+<meta name="ko-fi-verification" content="64ea4528-4867-47f4-9dbd-3e9dc4a42179">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7E63EG326X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-7E63EG326X");
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practical cron expression cheat sheet with 25 copy-paste schedules you'll actually use — every 5 minutes, hourly, daily at a specific time, weekdays only, and more. Plus a free visual cron builder.">
+  <meta property="og:title" content="Cron Expression Examples: 25 Schedules You'll Actually Use (2026 Cheat Sheet)">
+  <meta property="og:description" content="Stop guessing at cron syntax. 25 copy-paste cron expressions for real tasks — every 5 minutes, weekdays at 9am, first of the month, and more. Free visual builder included.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://nguyenminhduc9988.github.io/free-tools-hub/articles/cron-expression-examples-cheat-sheet-2026.html">
+  <title>Cron Expression Examples: 25 Schedules You'll Actually Use (2026 Cheat Sheet)</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fafbfc; max-width: 800px; margin: 0 auto; padding: 20px; }
+    header { text-align: center; padding: 40px 0 30px; border-bottom: 2px solid #e8e8e8; margin-bottom: 40px; }
+    h1 { font-size: 2.2em; color: #16213e; margin-bottom: 10px; line-height: 1.3; }
+    .meta { color: #6c757d; font-size: 0.95em; }
+    .meta a { color: #4361ee; text-decoration: none; }
+    h2 { font-size: 1.5em; color: #16213e; margin: 40px 0 15px; padding-top: 10px; border-top: 1px solid #eee; }
+    h3 { font-size: 1.2em; color: #0f3460; margin: 25px 0 10px; }
+    p { margin-bottom: 15px; color: #333; }
+    img { max-width: 100%; border-radius: 8px; margin: 20px 0; }
+    a.tool-link { display: inline-block; background: #4361ee; color: white; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 10px 5px 10px 0; transition: background 0.2s; }
+    a.tool-link:hover { background: #3a56d4; }
+    .tip-box { background: #f0f4ff; border-left: 4px solid #4361ee; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+    .tip-box p { margin-bottom: 5px; }
+    code { background: #eef1f7; color: #0f3460; padding: 2px 7px; border-radius: 4px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: 0.92em; }
+    ul { margin: 15px 0 15px 25px; }
+    li { margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.94em; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #e8e8e8; }
+    th { background: #16213e; color: #fff; }
+    td code { white-space: nowrap; }
+    tr:nth-child(even) { background: #f4f6fb; }
+    .footer-nav { text-align: center; padding: 30px 0; border-top: 2px solid #e8e8e8; margin-top: 40px; font-size: 0.9em; color: #6c757d; }
+    .footer-nav a { color: #4361ee; text-decoration: none; }
+    @media (max-width: 600px) { h1 { font-size: 1.6em; } body { padding: 15px; } table { font-size: 0.85em; } th, td { padding: 7px 8px; } }
+  </style>
+    <script async src="https://pagead2.googlesyndication.com/page.com/pagead/js/adsbygoogle.js?client=ca-pub-1432831545676654" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Cron Expression Examples: 25 Schedules You'll Actually Use (2026 Cheat Sheet)</h1>
+    <p class="meta">Published by The AI Producer · 7 min read · Updated July 5, 2026</p>
+  </header>
+
+  <main>
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800" alt="Clock and calendar representing scheduled tasks">
+
+    <p>Cron is the quiet workhorse behind almost every automated task on Linux and macOS — backups, log rotation, cache warming, report emails, health checks. But the syntax is famously unforgiving. One misplaced asterisk and your "run once a day" job fires every single minute.</p>
+
+    <p>This cheat sheet skips the theory and gives you <strong>25 cron expressions you can copy, paste, and ship</strong> — grouped by how often you actually need them. Bookmark it, and never Google "cron every 5 minutes" again.</p>
+
+    <div class="tip-box">
+      <p><strong>Just want to build one visually?</strong> Skip the syntax entirely and drag-and-drop your schedule with our free <a href="../tools/cron-visual-builder.html" style="color:#4361ee;font-weight:bold">Visual Cron Builder</a>, or generate + validate an expression with the <a href="../tools/cron-expression-generator.html" style="color:#4361ee;font-weight:bold">Cron Expression Generator</a>.</p>
+    </div>
+
+    <h2>How to Read a Cron Expression (60-Second Refresher)</h2>
+
+    <p>A standard cron line has <strong>five fields</strong>, separated by spaces, followed by the command to run:</p>
+
+    <p><code>┌ minute (0-59)  ┌ hour (0-23)  ┌ day-of-month (1-31)  ┌ month (1-12)  ┌ day-of-week (0-6, Sun=0)</code></p>
+
+    <p>So <code>30 2 * * *</code> reads as: <em>at minute 30, hour 2, every day, every month, every day of week</em> — i.e. <strong>2:30 AM daily</strong>. The four operators you'll use constantly:</p>
+
+    <ul>
+      <li><code>*</code> — every value ("every hour", "every day")</li>
+      <li><code>*/n</code> — every <em>n</em> units (<code>*/15</code> = every 15)</li>
+      <li><code>a-b</code> — a range (<code>1-5</code> = Monday through Friday)</li>
+      <li><code>a,b,c</code> — a specific list (<code>0,30</code> = on the hour and half-past)</li>
+    </ul>
+
+    <h2>Every-Minute & Every-Few-Minutes Schedules</h2>
+
+    <table>
+      <tr><th>Cron</th><th>Runs</th></tr>
+      <tr><td><code>* * * * *</code></td><td>Every minute (great for testing, terrible for production)</td></tr>
+      <tr><td><code>*/5 * * * *</code></td><td>Every 5 minutes</td></tr>
+      <tr><td><code>*/10 * * * *</code></td><td>Every 10 minutes</td></tr>
+      <tr><td><code>*/15 * * * *</code></td><td>Every 15 minutes (quarter-hour polling)</td></tr>
+      <tr><td><code>*/30 * * * *</code></td><td>Every 30 minutes</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <p><strong>Gotcha:</strong> <code>*/7 * * * *</code> does <em>not</em> mean "every 7 minutes forever." Cron restarts the step count at the top of each hour, so it fires at :00, :07, :14 … :56, then jumps to :00 again (a 4-minute gap). For clean intervals, use a divisor of 60 (5, 10, 12, 15, 20, 30).</p>
+    </div>
+
+    <h2>Hourly Schedules</h2>
+
+    <table>
+      <tr><th>Cron</th><th>Runs</th></tr>
+      <tr><td><code>0 * * * *</code></td><td>Every hour, on the hour</td></tr>
+      <tr><td><code>0 */2 * * *</code></td><td>Every 2 hours</td></tr>
+      <tr><td><code>0 */6 * * *</code></td><td>Every 6 hours (00:00, 06:00, 12:00, 18:00)</td></tr>
+      <tr><td><code>15 * * * *</code></td><td>Every hour at 15 minutes past</td></tr>
+      <tr><td><code>0 9-17 * * *</code></td><td>Every hour, 9 AM to 5 PM (business hours)</td></tr>
+    </table>
+
+    <h2>Daily Schedules</h2>
+
+    <table>
+      <tr><th>Cron</th><th>Runs</th></tr>
+      <tr><td><code>0 0 * * *</code></td><td>Every day at midnight</td></tr>
+      <tr><td><code>30 2 * * *</code></td><td>Every day at 2:30 AM (classic backup window)</td></tr>
+      <tr><td><code>0 9 * * *</code></td><td>Every day at 9:00 AM</td></tr>
+      <tr><td><code>0 8,20 * * *</code></td><td>Twice daily — 8 AM and 8 PM</td></tr>
+    </table>
+
+    <h2>Weekly & Weekday Schedules</h2>
+
+    <table>
+      <tr><th>Cron</th><th>Runs</th></tr>
+      <tr><td><code>0 9 * * 1-5</code></td><td>9 AM every weekday (Mon–Fri)</td></tr>
+      <tr><td><code>0 18 * * 5</code></td><td>6 PM every Friday</td></tr>
+      <tr><td><code>0 0 * * 0</code></td><td>Midnight every Sunday (weekly rollover)</td></tr>
+      <tr><td><code>0 10 * * 6,0</code></td><td>10 AM on weekends (Sat &amp; Sun)</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <p><strong>Day-of-week trap:</strong> Both <code>0</code> and <code>7</code> mean Sunday in most cron implementations. And if you fill in <em>both</em> day-of-month and day-of-week, classic Vixie cron runs the job when <em>either</em> matches — not both. Leave one as <code>*</code> unless you truly want the OR behavior.</p>
+    </div>
+
+    <h2>Monthly, Quarterly & Yearly Schedules</h2>
+
+    <table>
+      <tr><th>Cron</th><th>Runs</th></tr>
+      <tr><td><code>0 0 1 * *</code></td><td>Midnight on the 1st of every month (invoicing, reports)</td></tr>
+      <tr><td><code>0 0 1 1,4,7,10 *</code></td><td>Start of each quarter (Jan, Apr, Jul, Oct)</td></tr>
+      <tr><td><code>0 0 1 1 *</code></td><td>Once a year — midnight, January 1st</td></tr>
+    </table>
+
+    <h2>Handy Named Shortcuts</h2>
+
+    <p>Most modern cron daemons (and job schedulers like systemd timers, GitHub Actions, and Kubernetes CronJobs) accept these readable aliases:</p>
+
+    <table>
+      <tr><th>Shortcut</th><th>Equivalent</th></tr>
+      <tr><td><code>@hourly</code></td><td><code>0 * * * *</code></td></tr>
+      <tr><td><code>@daily</code> / <code>@midnight</code></td><td><code>0 0 * * *</code></td></tr>
+      <tr><td><code>@weekly</code></td><td><code>0 0 * * 0</code></td></tr>
+      <tr><td><code>@monthly</code></td><td><code>0 0 1 * *</code></td></tr>
+      <tr><td><code>@yearly</code> / <code>@annually</code></td><td><code>0 0 1 1 *</code></td></tr>
+      <tr><td><code>@reboot</code></td><td>Once, at system startup</td></tr>
+    </table>
+
+    <h2>The 3 Mistakes That Break Cron Jobs</h2>
+
+    <h3>1. Assuming the server's timezone</h3>
+    <p>Cron runs in the <strong>system timezone</strong>, not yours. A <code>0 9 * * *</code> job on a UTC server fires at 9 AM UTC — which might be 4 PM or 1 AM where your users are. Check with <code>timedatectl</code>, and if you need a specific zone, set <code>CRON_TZ=America/New_York</code> at the top of the crontab. Confused about the offset? Our <a href="../tools/time-zone-converter.html" style="color:#4361ee">Time Zone Converter</a> and <a href="../tools/timestamp-converter.html" style="color:#4361ee">Unix Timestamp Converter</a> settle it fast.</p>
+
+    <h3>2. Relying on your shell's PATH</h3>
+    <p>Cron runs with a minimal environment — often just <code>/usr/bin:/bin</code>. A script that works in your terminal can fail silently because <code>node</code>, <code>python3</code>, or <code>docker</code> isn't found. Always use absolute paths (<code>/usr/local/bin/node</code>) or set <code>PATH=</code> explicitly at the top of the crontab.</p>
+
+    <h3>3. No logging, so failures vanish</h3>
+    <p>By default cron emails output to the local mailbox nobody reads. Redirect instead: append <code>&gt;&gt; /var/log/myjob.log 2&gt;&amp;1</code> to capture both stdout and stderr. Future-you debugging a 3 AM failure will be grateful.</p>
+
+    <h2>Build &amp; Validate Your Own — Free, No Signup</h2>
+
+    <p>Reading a cron line is one thing; writing a correct one under deadline pressure is another. Instead of guessing, generate it visually and see the next run times before you deploy:</p>
+
+    <a href="../tools/cron-visual-builder.html" class="tool-link">Visual Cron Builder →</a>
+    <a href="../tools/cron-expression-generator.html" class="tool-link">Cron Expression Generator →</a>
+
+    <p>Both are 100% browser-based — no install, no account, nothing leaves your machine.</p>
+
+    <div class="tip-box">
+      <p><strong>Automating more than cron?</strong> If you run a solo business or side project on scripts and scheduled jobs, our <a href="https://ducminh5.gumroad.com/l/slrlhk" style="color:#4361ee;font-weight:bold">Ultimate AI Prompt Vault — 68 Prompts to Run Your Entire Solo Business</a> pairs perfectly with your automation stack: prompts for writing cron wrappers, drafting alert copy, summarizing logs, and turning raw output into readable reports.</p>
+    </div>
+
+    <h2>Copy, Paste, Ship</h2>
+
+    <p>The vast majority of real-world scheduling needs are covered by fewer than a dozen patterns — the ones above. Keep this cheat sheet open in a tab, lean on the visual builder for the tricky cases, and always double-check the timezone and PATH before you call a cron job "done."</p>
+
+    <div class="tip-box">
+      <p><strong>All tools referenced in this article are free at</strong> <a href="https://nguyenminhduc9988.github.io/free-tools-hub/" style="color: #4361ee; font-weight: bold;">ToolNest</a> — 60+ browser-based developer &amp; everyday utilities. No signup, no tracking, completely free.</p>
+    </div>
+  </main>
+
+  <div class="footer-nav">
+    <p><a href="https://nguyenminhduc9988.github.io/free-tools-hub/">← Back to All Tools</a> · <a href="best-free-online-tools-developers-2026.html">15 Best Free Tools for Developers →</a></p>
+  </div>
+
+<nav class="mojo-network" style="background:#0f1115;padding:20px;text-align:center;border-top:1px solid #262b36;margin-top:40px">
+  <p style="color:#9aa3b2;font-size:.85rem;margin-bottom:10px">Part of the <strong style="color:#22d3a6">MOJO Network</strong></p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:800px;margin:0 auto">
+    <a href="https://nguyenminhduc9988.github.io/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">🔧 ToolNest</a>
+    <a href="https://nguyenminhduc9988.github.io/crypto-brief/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">₿ Crypto Brief</a>
+    <a href="https://nguyenminhduc9988.github.io/finance-daily/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">💰 Finance Daily</a>
+    <a href="https://nguyenminhduc9988.github.io/health-today/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">❤️ Health Today</a>
+    <a href="https://nguyenminhduc9988.github.io/productivity-hacks/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">⚡ Productivity</a>
+    <a href="https://nguyenminhduc9988.github.io/ai-tool-hub/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">🤖 AI Tool Hub</a>
+    <a href="https://nguyenminhduc9988.github.io/sidehustlestack/" style="color:#4f8cff;text-decoration:none;font-size:.82rem;padding:4px 12px;border:1px solid #262b36;border-radius:16px">🚀 SideHustleStack</a>
+  </div>
+</nav>
+
+<!-- Ko-fi Floating Chat -->
+<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+<script>
+  kofiWidgetOverlay.draw('theaiproducer', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#00b9fe',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
+</body>
+</html>
