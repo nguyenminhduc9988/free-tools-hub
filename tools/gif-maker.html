@@ -69,6 +69,12 @@ footer{{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-
 .file-item button{{padding:6px 12px;font-size:.8rem}}
 </style>
     <script async src="https://pagead2.googlesyndication.com/page.com/pagead/js/adsbygoogle.js?client=ca-pub-1432831545676654" crossorigin="anonymous"></script>
+
+<meta property="og:image" content="https://storage.ko-fi.com/cdn/kofi2.png?v=6">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GIF Maker — Free Online Tool | ToolNest">
+<meta name="twitter:description" content="Create animated GIFs from multiple images — client-side">
+<meta name="twitter:image" content="https://storage.ko-fi.com/cdn/kofi2.png?v=6">
 </head>
 <body>
 <header class="top"><div class="wrap nav">
@@ -102,7 +108,7 @@ footer{{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-
 </div>
 <div style="margin-top:16px;display:none" id="resultContainer">
 <label class="label">Preview & Download</label>
-<img id="gifPreview" class="preview">
+<img id="gifPreview" class="preview" alt="GIF Maker — Free Online Tool | ToolNest" loading="lazy" width="1200" height="675">
 <div class="btns" style="margin-top:12px"><button onclick="downloadGIF()">Download GIF</button></div>
 </div>
 <div class="msg ok" id="successMsg" style="display:none"></div>
@@ -124,7 +130,7 @@ footer{{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-
   <div style="text-align:center;margin:20px 0;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;">
     <p style="margin:0 0 10px;color:var(--muted);font-size:.9rem;">Find these tools useful?</p>
     <a href="https://ko-fi.com/YOUR_USERNAME" target="_blank" style="display:inline-block;">
-      <img src="https://storage.ko-fi.com/cdn/kofi2.png?v=6" alt="Buy Me a Coffee at ko-fi.com" height="36" style="border:0;">
+      <img src="https://storage.ko-fi.com/cdn/kofi2.png?v=6" alt="Buy Me a Coffee at ko-fi.com" height="36" style="border:0;" loading="lazy" width="1200">
     </a>
     <p style="margin:8px 0 0;color:var(--muted);font-size:.75rem;">Support keeps 63+ tools free forever. No ads, no tracking.</p>
   </div>
@@ -147,7 +153,7 @@ function handleFiles(files) {
 }
 function renderFrames() {
     const list = document.getElementById('frameList');
-    list.innerHTML = frames.map((src,i)=>`<div class="file-item"><img src="${src}" style="width:40px;height:40px;object-fit:cover;border-radius:4px;margin-right:10px"><span>Frame ${i+1}</span><button onclick="frames.splice(${i},1);renderFrames()">Remove</button></div>`).join('');
+    list.innerHTML = frames.map((src,i)=>`<div class="file-item"><img src="${src}" style="width:40px;height:40px;object-fit:cover;border-radius:4px;margin-right:10px" alt="GIF Maker — Free Online Tool | ToolNest" loading="lazy" width="1200" height="675"><span>Frame ${i+1}</span><button onclick="frames.splice(${i},1);renderFrames()">Remove</button></div>`).join('');
     document.getElementById('createBtn').disabled = frames.length < 2;
 }
 function clearFrames() { frames = []; renderFrames(); document.getElementById('createBtn').disabled = true; }
